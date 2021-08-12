@@ -1,0 +1,45 @@
+@import '../../../styles/index';
+@import './variables';
+@import './mixin';
+
+$btn-class-name: x-btn;
+
+.x-btn {
+  display: inline-block;
+  cursor: pointer;
+  color: $body-color;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  border: $btn-border-width solid transparent;
+  box-shadow: $btn-box-shadow;
+  transition: $btn-transition;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  @include button-size;
+  @include button-style($white, $gray-500, $black, $white, $blue, $blue);
+
+  &-primary {
+    @include button-style($primary, $primary, $white);
+  }
+
+  &-link {
+    box-shadow: none;
+    @include button-style($white, transparent, $primary, $white, transparent, lighten($primary, 15%));
+  }
+
+  &-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg)
+  }
+
+  &-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm)
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+}
+
