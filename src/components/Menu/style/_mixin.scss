@@ -1,0 +1,80 @@
+@import '../../../styles/variables';
+@import './variables';
+
+@mixin initial-list-style {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+@mixin menu-item-style {
+
+  padding: $menu-item-padding-y 0;
+  margin: 0 $menu-item-margin-x;
+  cursor: pointer;
+  color: $body-color;
+  transition: $menu-transition;
+  position: relative;
+  white-space: nowrap;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  &-selected, &:hover:not([class*='disabled']) {
+    color: $menu-item-active-color;
+  }
+
+  /* pointer-eventes 和 cursor 冲突 */
+  &-disabled {
+    color: $menu-item-disabled-color;
+    // pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+@mixin horizontal-item-style {
+  &::after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: $menu-transition;
+    border-bottom: $menu-item-active-border-width solid transparent;
+  }
+
+  &-selected, &:hover:not([class*='disabled']) {
+ 
+    &::after {
+      border-color: $menu-item-active-color;
+    }
+  }
+}
+
+
+@mixin vertical-item-style {
+  margin: $menu-item-margin-y 0;
+  padding: 0 $menu-item-padding-x;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    transition: $menu-transition;
+    border-left: $menu-item-active-border-width solid transparent;
+  }
+
+  &-selected, &:hover:not([class*='disabled']) {
+ 
+    &::after {
+      border-color: $menu-item-active-color;
+    }
+  }
+}
+

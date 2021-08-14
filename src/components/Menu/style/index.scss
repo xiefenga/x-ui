@@ -1,0 +1,60 @@
+@import './variables';
+@import './mixin';
+
+.x-menu {
+  @include initial-list-style;
+
+  &-horizontal {
+    flex-wrap: wrap;
+    box-shadow: $menu-box-shadow-y;
+    border-bottom: $menu-border-width solid $menu-border-color;
+
+    > .x-menu-item {
+      @include horizontal-item-style;
+    }
+
+    > .x-menu-subMenu {
+      @include horizontal-item-style;
+
+      .x-menu-subMenu-wrapper {
+        position: absolute;
+        background: $white;
+        z-index: 100;
+        top: calc(100% + 8px);
+        left: 0;
+        border: $menu-border-width solid $menu-border-color;
+        box-shadow: $submenu-box-shadow;
+      }
+    }
+
+  }
+
+  &-item {
+    @include menu-item-style;
+  }
+
+  &-subMenu {
+    @include menu-item-style;
+
+    &-wrapper {
+      @include initial-list-style;
+      display: none;
+    }
+
+    &-open:not([class*='disabled']) {
+      .x-menu-subMenu-wrapper {
+        display: block;
+      }
+    }
+  }
+
+  &-vertical {
+    flex-direction: column;
+    box-shadow: $menu-box-shadow-x;
+    border-left: $menu-border-width solid $menu-border-color;
+
+    > .x-menu-item {
+      @include vertical-item-style;
+    }
+  }
+}

@@ -1,19 +1,43 @@
-import Button from './components/Button'
+import { useState } from 'react'
+import Menu from './components/Menu'
+// import Button from './components/Button'
 
 function App() {
+  const [index, setIndex] = useState('')
+  const onSelect = (index: string) => {
+    console.log(index)
+    setIndex(index)
+  }
   return (
     <div className="App">
-      <Button size="large">click</Button>
-      <Button size="small" onClick={e => console.log(e)} type="primary">click</Button>
-      <Button block type="primary">click</Button>
-      <Button type="link" disabled>click</Button>
-      <br />
-      <Button href="https://www.baidu.com">百度一下</Button>
-      <Button type="primary" href="https://www.baidu.com" target="_blank">百度一下</Button>
-      <Button type="primary" block href="https://www.baidu.com" target="_blank">百度一下</Button>
-      <Button block disabled href="https://www.baidu.com" target="_blank">百度一下</Button>
+      <Menu selectedIndex={index} defaultOpenSubMenus={['aaa']}  mode="vertical" onSelect={onSelect}>
+        <Menu.Item disabled>Option 1</Menu.Item>
+        <Menu.Item>Option 2</Menu.Item>
+        <Menu.Item>Option 3</Menu.Item>
+        <Menu.Item>Option 4</Menu.Item>
+        <Menu.Item>Option 5</Menu.Item>
+        <Menu.SubMenu index="aaa" title="下拉菜单">
+          <Menu.Item>Option 5zzzz</Menu.Item>
+        </Menu.SubMenu>
+        <Menu.SubMenu title="下拉菜单">
+          <Menu.Item>Option 5zzzz</Menu.Item>
+        </Menu.SubMenu>
+      </Menu>
+      <Menu selectedIndex={index} onSelect={onSelect}>
+        <Menu.Item disabled>Option 1</Menu.Item>
+        <Menu.Item>Option 2</Menu.Item>
+        <Menu.Item>Option 3</Menu.Item>
+        <Menu.Item>Option 4</Menu.Item>
+        <Menu.Item>Option 5</Menu.Item>
+        <Menu.SubMenu title="下拉菜单">
+          <Menu.Item>Option 5zzzz</Menu.Item>
+        </Menu.SubMenu>
+        <Menu.SubMenu title="下拉菜单">
+          <Menu.Item>Option 5zzzz</Menu.Item>
+        </Menu.SubMenu>
+      </Menu>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
