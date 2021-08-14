@@ -97,5 +97,6 @@ const Button: React.FC<ButtonProps> = props => {
   )
 }
 
+Button.displayName = 'x-Button'
 
 export default Button
