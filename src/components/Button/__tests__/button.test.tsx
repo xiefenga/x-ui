@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import Button from './button'
+import Button from '../Button'
 
 function buttonBaseTest(element: HTMLButtonElement) {
   expect(element).toBeInTheDocument()
@@ -7,6 +7,7 @@ function buttonBaseTest(element: HTMLButtonElement) {
   expect(element).toHaveClass('x-btn')
   expect(element.disabled).toBeFalsy()
 }
+
 
 describe('Button component test', () => {
 
