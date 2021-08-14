@@ -1,6 +1,6 @@
-import Button from './button'
 import './style/index.scss'
 
-export default Button
+export { default } from './Button'
 
-export type { ButtonProps } from './button'
+export type { ButtonProps } from './Button'
+

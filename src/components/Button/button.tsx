@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { PropsWithClassName } from '../../types/Component'
+import { PropsWithClassName } from 'x-ui'
 
 type ButtonSize = 'small' | 'large' | 'middle'
 
@@ -28,7 +28,7 @@ type NativeButtonProps = {
   htmlType: ButtonHTMLType
 } & ButtonBaseProps & Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type' | 'onClick'>
 
-export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
+export type ButtonProps = PropsWithClassName<Partial<NativeButtonProps & AnchorButtonProps>>
 
 const baseClassName = 'x-btn'
 
@@ -40,7 +40,7 @@ const btnSizeClassName: Record<ButtonSize, string> = {
 
 const btnTypeClassName = (type: ButtonType) => type === 'default' ? '' : `${baseClassName}-${type}`
 
-const Button: React.FC<PropsWithClassName<ButtonProps>> = props => {
+const Button: React.FC<ButtonProps> = props => {
 
   const {
     size = 'middle',
@@ -53,6 +53,7 @@ const Button: React.FC<PropsWithClassName<ButtonProps>> = props => {
     htmlType = 'button',
     href,
     target,
+    onClick,
     ...rest
   } = props
 
@@ -65,28 +66,34 @@ const Button: React.FC<PropsWithClassName<ButtonProps>> = props => {
     { 'disabled': href && disabled }
   )
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (disabled) {
+      e.preventDefault()
+    } else {
+      onClick && onClick(e)
+    }
+  }
+
+  const anchorProps = {
+    href,
+    target,
+    className: classes,
+    onClick: handleClick,
+    ...rest
+  }
+
+  const buttonProps = {
+    onClick,
+    disabled,
+    type: htmlType,
+    className: classes,
+    ...rest
+  }
+
   return (
     href
-      ? (
-        <a
-          {...rest}
-          href={href}
-          className={classes}
-          target={target}
-        >
-          {children}
-        </a>
-      ) : (
-        <button
-          {...rest}
-          type={htmlType}
-          className={classes}
-          disabled={disabled}
-        >
-          {children}
-        </button>
-      )
-
+      ? (<a {...anchorProps}> {children} </a>)
+      : (<button {...buttonProps}> {children} </button>)
   )
 }
 
