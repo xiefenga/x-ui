@@ -14,30 +14,73 @@ $btn-class-name: x-btn;
   transition: $btn-transition;
   white-space: nowrap;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: baseline;
   background-image: none;
   text-decoration: none;
   @include button-size;
   @include button-style($white, $gray-500, $black, $white, $blue, $blue);
 
-  &-primary {
+  &__loading-icon {
+    color: inherit;
+    margin-right: .3rem;
+    font-size: 1em;
+    vertical-align: -.1em;
+  }
+
+  &--loading {
+    pointer-events: none;
+  }
+
+  &--primary {
     @include button-style($primary, $primary, $white);
   }
 
-  &-link {
+  &--success {
+    @include button-style($success, $success, $white);
+  }
+
+  &--info {
+    @include button-style($info, $info, $white);
+  }
+
+  &--warning {
+    @include button-style($warning, $warning, $white);
+  }
+
+  &--danger {
+    @include button-style($danger, $danger, $white);
+  }
+
+  &--link {
     box-shadow: none;
     @include button-style($white, transparent, $primary, $white, transparent, lighten($primary, 15%));
   }
 
-  &-lg {
-    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg)
+  &--lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+
+    &.x-btn--round {
+      border-radius: $btn-padding-y-lg * 2 + $btn-font-size-lg;
+    }
   }
 
-  &-sm {
-    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm)
+  &--sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+
+    &.x-btn--round {
+      border-radius: $btn-padding-y-sm * 2 + $btn-font-size-sm;
+    }
   }
 
-  &-block {
+  &.x-btn--round {
+    border-radius: $btn-padding-y * 2 + $btn-font-size;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--block {
     display: block;
     width: 100%;
   }
