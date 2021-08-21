@@ -1,0 +1,70 @@
+@import '../../../styles/variables';
+
+@keyframes spining {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.x-loading {
+  display: none;
+  color: $primary;
+  text-align: center;
+  vertical-align: middle;
+
+  &--spinning {
+    display: inline-flex;
+
+    .x-loading__inner {
+      animation: spining 1s infinite linear;
+    }
+
+    + .x-loading__body {
+      opacity: .5;
+    }
+  }
+  
+
+  &__wrapper {
+    position: relative;
+  
+    .x-loading {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      .x-loading__container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+
+        .x-loading__inner {
+          margin: 0 auto;
+        }
+  
+        .x-loading__tip {
+          padding-top: .1em;
+        }
+      }
+    }
+  }
+  
+  &__inner {
+    font-size: 24px;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+  }
+}
+
+
