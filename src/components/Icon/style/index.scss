@@ -1,0 +1,7 @@
+@import './variables';
+
+@each $key, $val in $theme-colors {
+  .x-icon--#{$key} {
+    color: $val;
+  }
+}
