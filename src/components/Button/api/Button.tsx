@@ -10,7 +10,14 @@ interface ButtonBaseProps {
   /**
    * 按钮类型
    */
-  type: "default" | "primary" | "link" | "success" | "info";
+  type:
+    | "default"
+    | "primary"
+    | "link"
+    | "success"
+    | "info"
+    | "warning"
+    | "danger";
 
   /**
    * 按钮的链接

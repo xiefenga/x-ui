@@ -1,8 +1,11 @@
-declare module 'x-ui' {
-  
-  type PropsWithClassName<P> = P & { className?: string }
+declare module "x-ui" {
+  type PropsWithClassName<P> = P & { className?: string };
 
-  type UnknowReactElement = React.ReactElement<unknown>
+  type PropsWithStyle<P> = P & { style?: React.CSSProperties };
 
-  type UnkownFCElement = React.FunctionComponentElement<unknown>
+  type PropsWithCS<P> = PropsWithClassName<PropsWithStyle<P>>;
+
+  type UnknowReactElement = React.ReactElement<unknown>;
+
+  type UnkownFCElement = React.FunctionComponentElement<unknown>;
 }

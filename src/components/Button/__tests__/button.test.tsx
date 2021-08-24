@@ -1,64 +1,70 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import Button from "../Button";
-
-function buttonBaseTest(element: HTMLButtonElement) {
-  expect(element).toBeInTheDocument();
-  expect(element.tagName).toEqual("BUTTON");
-  expect(element).toHaveClass("x-btn");
-  expect(element.disabled).toBeFalsy();
-}
 
 describe("Button component test", () => {
   it("should render correct default button", () => {
     render(<Button>click</Button>);
-    const element = screen.getByText("click") as HTMLButtonElement;
-    buttonBaseTest(element);
+    const element = screen.getByTestId("x-button") as HTMLButtonElement;
+    expect(element).toBeInTheDocument();
+    expect(element.tagName).toEqual("BUTTON");
+    expect(element).toHaveClass("x-btn");
+    expect(element.disabled).toBeFalsy();
   });
 
   it("should render correct with different types", () => {
-    render(<Button type="primary">click</Button>);
-    const primaryBtn = screen.getByText("click") as HTMLButtonElement;
-    buttonBaseTest(primaryBtn);
-    expect(primaryBtn).toHaveClass("x-btn-primary");
-    render(<Button type="link">link</Button>);
-    const linkBtn = screen.getByText("link") as HTMLButtonElement;
-    buttonBaseTest(primaryBtn);
-    expect(linkBtn).toHaveClass("x-btn-link");
+    expect(
+      render(<Button type="primary">click</Button>).getByTestId("x-button")
+    ).toHaveClass("x-btn--primary");
+
+    cleanup();
+
+    expect(
+      render(<Button type="link">link</Button>).getByTestId("x-button")
+    ).toHaveClass("x-btn--link");
   });
 
   it("should render an anchor when has href prop", () => {
-    render(<Button href="https://www.baidu.com">baidu</Button>);
-    const element = screen.getByText("baidu") as HTMLAnchorElement;
+    render(
+      <Button type="primary" href="https://www.baidu.com">
+        baidu
+      </Button>
+    );
+    const element = screen.getByTestId("x-button") as HTMLAnchorElement;
     expect(element).toBeInTheDocument();
     expect(element.tagName).toEqual("A");
-    expect(element).toHaveClass("x-btn");
+    expect(element).toHaveClass("x-btn--primary");
   });
 
   it("should invoke click event correctly", () => {
     const props = { onClick: jest.fn() };
     render(<Button {...props}>click</Button>);
-    const element = screen.getByText("click") as HTMLButtonElement;
+    const element = screen.getByTestId("x-button") as HTMLButtonElement;
     fireEvent.click(element);
     expect(props.onClick).toHaveBeenCalled();
   });
 
   it("should render a disabled button when get disabled", () => {
-    // button
     const props = { disabled: true, onClick: jest.fn() };
+
+    // button
     render(<Button {...props}>click</Button>);
-    const element = screen.getByText("click") as HTMLButtonElement;
+    const element = screen.getByTestId("x-button") as HTMLButtonElement;
     expect(element.disabled).toBeTruthy();
     fireEvent.click(element);
     expect(props.onClick).not.toHaveBeenCalled();
+
+    cleanup();
+
     // anchor
     render(
-      <Button {...props} href="/jjj">
-        link
+      <Button {...props} href="/abc">
+        {" "}
+        link{" "}
       </Button>
     );
-    const link = screen.getByText("link") as HTMLAnchorElement;
-    expect(link).toHaveClass("disabled");
+    const link = screen.getByTestId("x-button") as HTMLAnchorElement;
+    expect(link).toHaveClass("x-btn--disabled");
     fireEvent.click(element);
     expect(props.onClick).not.toHaveBeenCalled();
   });
@@ -66,10 +72,29 @@ describe("Button component test", () => {
   it("should render a button with classname and htmlType", () => {
     const element = render(
       <Button className="demo" htmlType="button">
-        click
+        classname button
       </Button>
-    ).getByText("click") as HTMLButtonElement;
+    ).getByTestId("x-button") as HTMLButtonElement;
     expect(element).toHaveClass("demo");
     expect(element.type).toEqual("button");
+  });
+
+  it("should render a block button when receive block prop", () => {
+    render(<Button block>block button</Button>);
+    const blockButton = screen.getByTestId("x-button");
+    expect(blockButton).toHaveClass("x-btn--block");
+  });
+
+  it("should be loading status when loading prop is true", () => {
+    const props = { loading: true, onClick: jest.fn() };
+
+    render(<Button {...props}>loding button</Button>);
+    const loadingButton = screen.queryByTestId("x-button") as HTMLButtonElement;
+    expect(loadingButton).toHaveClass("x-btn--loading");
+    expect(
+      loadingButton.getElementsByClassName("x-btn__loading-icon").length
+    ).toEqual(1);
+    fireEvent.click(loadingButton);
+    expect(props.onClick).not.toHaveBeenCalled();
   });
 });

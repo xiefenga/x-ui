@@ -9,5 +9,8 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    semi: ["error", "never"],
+    quotes: ["warn", "single"],
+  },
 };
