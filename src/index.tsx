@@ -1,12 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import './styles/index.scss'
+import "./styles/index.scss";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+export { default as Button } from "./components/Button";
 
+export type { ButtonProps } from "./components/Button";
+
+export { default as Loading } from "./components/Loading";
+
+export type { LoadingProps } from "./components/Loading";
+
+export { default as Menu, MenuItem, SubMenu } from "./components/Menu";
+
+export type { MenuProps, MenuItemProps, SubMenuProps } from "./components/Menu";
