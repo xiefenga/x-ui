@@ -1,0 +1,28 @@
+@import "./variables";
+
+.x-input {
+  input {
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+}
+
+.x-input__wrapper {
+  // display: inline-block;
+
+  .x-input__inner {
+    width: 100%;
+    font-size: $input-font-size;
+    line-height: $input-line-height;
+    padding: $input-padding-y $input-padding-x;
+    background: $input-bg;
+    box-shadow: $input-shadow;
+    border-radius: $input-border-radius;
+    color: $input-color;
+
+    &::selection {
+      background-color: darken($input-bg, 10);
+    }
+  }
+}

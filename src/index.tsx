@@ -11,3 +11,5 @@ export type { LoadingProps } from "./components/Loading";
 export { default as Menu, MenuItem, SubMenu } from "./components/Menu";
 
 export type { MenuProps, MenuItemProps, SubMenuProps } from "./components/Menu";
+
+export { default as Input } from "./components/Input";
