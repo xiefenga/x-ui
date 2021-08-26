@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import Icon from "../Icon";
 import { PropsWithCS } from "x-ui";
 import classNames from "classnames";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 
 type InputSize = "large" | "middle" | "small";
 
@@ -31,10 +32,15 @@ const Input: React.FC<InputProps> = (props) => {
     type = "text",
     allowClear = false,
     size = "middle",
+    onChange,
     ...rest
   } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const [showClear, setShowClear] = useState<boolean>(
+    !!(props.value || defaultValue)
+  );
 
   useEffect(() => {
     if (defaultValue !== undefined && props.value === undefined) {
@@ -44,15 +50,62 @@ const Input: React.FC<InputProps> = (props) => {
     }
   }, []);
 
-  const classes = classNames(
-    ["x-input", "x-input__wrapper"],
-    className,
-    inputSizeClassName[size]
-  );
+  // 避免 clearIcon 闪烁
+  useLayoutEffect(() => {
+    if (allowClear) {
+      setShowClear(inputRef.current?.value !== "");
+    }
+  });
+
+  const classes = classNames("x-input", className, inputSizeClassName[size], {
+    "x-input--clearable": allowClear,
+  });
+
+  if (allowClear) {
+    const clearClasses = classNames("x-input__clear", {
+      "x-input__clear--hidden": !showClear,
+    });
+
+    const clearInputValue = () => {
+      if (inputRef.current) {
+        // 不会触发 onChange
+        inputRef.current.focus();
+        inputRef.current.value = "";
+        // 主要目的是让组件更新，useLayoutEffect 会设置正确的状态
+        setShowClear(false);
+      }
+    };
+
+    const watchChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+      setShowClear(e.target.value !== "");
+      onChange && onChange(e);
+    };
+
+    return (
+      <div className={classes}>
+        <input
+          {...rest}
+          type={type}
+          ref={inputRef}
+          onChange={watchChange}
+          className="x-input__inner"
+        />
+        <div className={clearClasses} onClick={clearInputValue}>
+          <Icon icon="times-circle" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={classes}>
-      <input className="x-input__inner" ref={inputRef} {...rest} type={type} />
+      <input
+        {...rest}
+        type={type}
+        ref={inputRef}
+        onChange={onChange}
+        className="x-input__inner"
+      />
     </div>
   );
 };

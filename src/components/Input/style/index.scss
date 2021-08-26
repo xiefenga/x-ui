@@ -6,10 +6,6 @@
     outline: none;
     padding: 0;
   }
-}
-
-.x-input__wrapper {
-  // display: inline-block;
 
   .x-input__inner {
     width: 100%;
@@ -20,9 +16,64 @@
     box-shadow: $input-shadow;
     border-radius: $input-border-radius;
     color: $input-color;
+    transition: box-shadow 0.4s ease-in-out;
+
+    &:focus {
+      box-shadow: $input-focus-shadow;
+    }
 
     &::selection {
       background-color: darken($input-bg, 10);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.25);
+      background-color: $input-disabled-bg;
+      box-shadow: $input-disabled-shadow;
+    }
+  }
+}
+
+.x-input--sm {
+  .x-input__inner {
+    font-size: $input-font-size-sm;
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    border-radius: $input-border-radius-sm;
+  }
+}
+
+.x-input--lg {
+  .x-input__inner {
+    font-size: $input-font-size-lg;
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    border-radius: $input-border-radius-lg;
+  }
+}
+
+.x-input--clearable {
+  position: relative;
+
+  .x-input__inner {
+    padding-right: $input-padding-y-lg * 3;
+  }
+
+  .x-input__clear {
+    position: absolute;
+    top: 50%;
+    right: $input-padding-y-lg * 1.2;
+    transform: translateY(-50%);
+    color: $input-clear-icon-color;
+    transition: color .3s;
+    line-height: 0;
+    cursor: pointer;
+    
+    &:hover {
+      color: $input-clear-icon-color-hover;
+    }
+
+    &--hidden {
+      visibility: hidden;
     }
   }
 }
