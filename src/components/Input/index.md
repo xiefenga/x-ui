@@ -90,7 +90,7 @@ export default () => {
   const [value, setValue] = useState("受控状态");
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    setValue(e.target.value);
+    console.log(e.target.value);
   };
 
   return (
@@ -101,7 +101,7 @@ export default () => {
       <br />
       <Input allowClear value="无法改变，无法清空" />
       <br />
-      <Input allowClear value={value} onChange={onChange} />
+      <Input allowClear onChange={onChange} />
     </React.Fragment>
   );
 };

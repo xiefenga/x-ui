@@ -25,6 +25,11 @@ const inputSizeClassName: Record<InputSize, string> = {
   small: "x-input--sm",
 };
 
+const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+  HTMLInputElement.prototype,
+  "value"
+)!.set!;
+
 const Input: React.FC<InputProps> = (props) => {
   const {
     className,
@@ -68,11 +73,15 @@ const Input: React.FC<InputProps> = (props) => {
 
     const clearInputValue = () => {
       if (inputRef.current) {
-        // 不会触发 onChange
-        inputRef.current.focus();
-        inputRef.current.value = "";
-        // 主要目的是让组件更新，useLayoutEffect 会设置正确的状态
-        setShowClear(false);
+        // init 事件
+        const event = document.createEvent("UIEvent");
+        event.initEvent("input", true, true);
+
+        // 原生 set ，清空
+        nativeInputValueSetter!.call(inputRef.current, "");
+
+        // 手动分发事件，触发 react onChange
+        inputRef.current.dispatchEvent(event);
       }
     };
 
