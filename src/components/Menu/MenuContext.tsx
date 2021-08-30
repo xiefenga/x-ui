@@ -11,11 +11,11 @@ export interface MenuContextProps {
 }
 
 const MenuContext = createContext<MenuContextProps>({
-  selectedIndex: '',
-  subMenuCloseDelay: 0,
-  subMenuOpenDelay: 0,
-  mode: 'horizontal',
-  defaultOpenSubMenus: []
+	selectedIndex: '',
+	subMenuCloseDelay: 0,
+	subMenuOpenDelay: 0,
+	mode: 'horizontal',
+	defaultOpenSubMenus: []
 })
 
 MenuContext.displayName = 'x-Menu.Context'

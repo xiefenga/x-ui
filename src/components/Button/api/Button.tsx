@@ -6,18 +6,18 @@ interface ButtonBaseProps {
   /**
    * 按钮尺寸
    */
-  size: "small" | "large" | "middle";
+  size: 'small' | 'large' | 'middle';
   /**
    * 按钮类型
    */
   type:
-    | "default"
-    | "primary"
-    | "link"
-    | "success"
-    | "info"
-    | "warning"
-    | "danger";
+    | 'default'
+    | 'primary'
+    | 'link'
+    | 'success'
+    | 'info'
+    | 'warning'
+    | 'danger';
 
   /**
    * 按钮的链接
@@ -32,7 +32,7 @@ interface ButtonBaseProps {
   /**
    * 原生 button 的 type 属性
    */
-  htmlType: "submit" | "button" | "reset";
+  htmlType: 'submit' | 'button' | 'reset';
 
   /**
    * 按钮独占一行
@@ -41,7 +41,7 @@ interface ButtonBaseProps {
   /**
    * 按钮形状
    */
-  shape: "circle" | "round";
+  shape: 'circle' | 'round';
   /**
    * 按钮的加载状态
    */
@@ -54,13 +54,13 @@ interface ButtonBaseProps {
 
 export type ButtonProps = Partial<ButtonBaseProps>;
 
-const Button: React.FC<ButtonProps> = () => null;
+const Button: React.FC<ButtonProps> = () => null
 
 Button.defaultProps = {
-  size: "middle",
-  type: "default",
-  htmlType: "button",
-  loading: false,
-};
+	size: 'middle',
+	type: 'default',
+	htmlType: 'button',
+	loading: false,
+}
 
-export default Button;
+export default Button

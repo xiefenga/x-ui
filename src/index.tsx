@@ -13,3 +13,9 @@ export { default as Menu, MenuItem, SubMenu } from "./components/Menu";
 export type { MenuProps, MenuItemProps, SubMenuProps } from "./components/Menu";
 
 export { default as Input } from "./components/Input";
+
+export type { InputProps } from './components/Input'
+
+export { default as AutoComplete } from './components/AutoComplete'
+
+export type { AutoCompleteProps } from './components/AutoComplete'

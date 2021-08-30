@@ -12,10 +12,10 @@ interface LoadingBaseProps {
 
 export type LoadingProps = Partial<LoadingBaseProps>;
 
-const Loading: React.FC<LoadingProps> = () => null;
+const Loading: React.FC<LoadingProps> = () => null
 
 Loading.defaultProps = {
-  loading: false,
-};
+	loading: false,
+}
 
-export default Loading;
+export default Loading

@@ -12,32 +12,32 @@ export type MenuItemProps = PropsWithClassName<Partial<MenuItemBaseProps>>
 
 const MenuItem: React.FC<MenuItemProps> = props => {
 
-  const {
-    selectedIndex,
-    onSelect
-  } = useContext(MenuContext)
+	const {
+		selectedIndex,
+		onSelect
+	} = useContext(MenuContext)
 
-  const {
-    index = '',
-    disabled = false,
-    className,
-    children
-  } = props
+	const {
+		index = '',
+		disabled = false,
+		className,
+		children
+	} = props
 
-  const classes = classNames(
-    'x-menu-item',
-    className,
-    { 'x-menu-item-disabled': disabled },
-    { 'x-menu-item-selected': selectedIndex === index }
-  )
+	const classes = classNames(
+		'x-menu-item',
+		className,
+		{ 'x-menu-item-disabled': disabled },
+		{ 'x-menu-item-selected': selectedIndex === index }
+	)
 
-  const onClick = () => !disabled && onSelect && onSelect(index)
+	const onClick = () => !disabled && onSelect && onSelect(index)
 
-  return (
-    <li className={classes} onClick={onClick}>
-      {children}
-    </li>
-  )
+	return (
+		<li className={classes} onClick={onClick}>
+			{children}
+		</li>
+	)
 }
 
 MenuItem.displayName = 'x-Menu.Item'
@@ -45,7 +45,7 @@ MenuItem.displayName = 'x-Menu.Item'
 type MenuItemElement = React.FunctionComponentElement<MenuItemProps>
 
 export const isMenuItemElement = (val: UnknowReactElement): val is MenuItemElement => {
-  return (val as UnkownFCElement).type.displayName === MenuItem.displayName
+	return (val as UnkownFCElement).type.displayName === MenuItem.displayName
 }
 
 export default MenuItem
