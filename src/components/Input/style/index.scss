@@ -16,7 +16,6 @@
     box-shadow: $input-shadow;
     border-radius: $input-border-radius;
     color: $input-color;
-    transition: box-shadow 0.4s ease-in-out;
 
     &:focus {
       box-shadow: $input-focus-shadow;
@@ -64,10 +63,10 @@
     right: $input-padding-y-lg * 1.2;
     transform: translateY(-50%);
     color: $input-clear-icon-color;
-    transition: color .3s;
+    transition: color 0.3s;
     line-height: 0;
     cursor: pointer;
-    
+
     &:hover {
       color: $input-clear-icon-color-hover;
     }
