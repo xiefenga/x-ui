@@ -91,17 +91,16 @@ export default () => {
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     console.log(e.target.value);
+    setValue(e.target.value)
   };
 
   return (
     <React.Fragment>
       <Input allowClear placeholder="请输入内容" />
       <br />
-      <Input allowClear defaultValue="这是初始值" />
-      <br />
       <Input allowClear value="无法改变，无法清空" />
       <br />
-      <Input allowClear onChange={onChange} />
+      <Input allowClear onChange={onChange} value={value} placeholder="请输入内容" />
     </React.Fragment>
   );
 };
