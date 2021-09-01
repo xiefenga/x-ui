@@ -91,7 +91,7 @@ export default () => {
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     console.log(e.target.value);
-    setValue(e.target.value)
+    setValue(e.target.value);
   };
 
   return (
@@ -100,10 +100,15 @@ export default () => {
       <br />
       <Input allowClear value="无法改变，无法清空" />
       <br />
-      <Input allowClear onChange={onChange} value={value} placeholder="请输入内容" />
+      <Input
+        allowClear
+        onChange={onChange}
+        value={value}
+        placeholder="请输入内容"
+      />
     </React.Fragment>
   );
 };
 ```
 
-<!-- <API src="./api/"></API> -->
+<API src="./api/Input.tsx"></API>
