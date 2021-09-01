@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+$margin: 1rem;
+$box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem $white;
+
+.x-alert {
+  border-radius: 1rem;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin-left: $margin;
+  }
+
+  &__text {
+    margin: $margin;
+  }
+
+  &__close {
+    margin: $margin;
+    margin-left: auto;
+    cursor: pointer;
+    transition: color .3s;
+
+    &:hover {
+      color: lighten(#000, 50);
+    }
+  }
+}
