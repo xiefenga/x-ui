@@ -6,31 +6,31 @@ import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontaw
 type ThemeProps = 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark'
 
 interface IconBaseProps extends FontAwesomeIconProps {
-  theme?: ThemeProps
+	theme?: ThemeProps
 }
 
 export type IconProps = PropsWithClassName<IconBaseProps>
 
 const Icon: React.FC<IconProps> = props => {
 
-  const {
-    theme,
-    className,
-    ...restProps
-  } = props
+	const {
+		theme,
+		className,
+		...restProps
+	} = props
 
-  const classes = classNames(
-    'x-icon',
-    className,
-    { [`x-icon--${theme}`]: !!theme },
-  )
+	const classes = classNames(
+		'x-icon',
+		className,
+		{ [`x-icon--${theme}`]: !!theme },
+	)
 
-  return (
-    <FontAwesomeIcon
-      className={classes}
-      {...restProps}
-    />
-  )
+	return (
+		<FontAwesomeIcon
+			className={classes}
+			{...restProps}
+		/>
+	)
 }
 
 export default Icon
