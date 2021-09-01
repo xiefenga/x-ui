@@ -3,21 +3,21 @@ import { PropsWithCS } from 'x-ui'
 import classNames from 'classnames'
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 
-type InputSize = 'large' | 'middle' | 'small';
+type InputSize = 'large' | 'middle' | 'small'
 
 interface InputBaseProps {
-  allowClear: boolean;
-  defaultValue: string;
-  disabled: boolean;
-  size: InputSize;
-  value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  allowClear: boolean
+  defaultValue: string
+  disabled: boolean
+  size: InputSize
+  value: string
+  onChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
 export type InputProps = PropsWithCS<
   Partial<InputBaseProps> &
     Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'value'>
->;
+>
 
 const inputSizeClassName: Record<InputSize, string> = {
 	large: 'x-input--lg',
