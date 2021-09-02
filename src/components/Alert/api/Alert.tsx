@@ -15,7 +15,7 @@ export interface AlertProps {
    */
   closeable?: boolean
   /**
-   * 关闭处罚事件
+   * 关闭触发事件
    */
   onClose?: (e: React.MouseEvent<SVGSVGElement>) => void
 }
