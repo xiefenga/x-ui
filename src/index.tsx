@@ -19,3 +19,11 @@ export type { InputProps } from './components/Input'
 export { default as AutoComplete } from './components/AutoComplete'
 
 export type { AutoCompleteProps } from './components/AutoComplete'
+
+export { default as Alert } from './components/Alert'
+
+export type { AlertProps } from './components/Alert'
+
+export { default as Tab } from './components/Tab'
+
+export type { TabProps } from './components/Tab'
