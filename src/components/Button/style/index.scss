@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./mixin";
+@import './variables';
+@import './mixin';
 
 $btn-class-name: x-btn;
 
@@ -20,7 +20,7 @@ $btn-class-name: x-btn;
   @include button-size;
   @include button-style($white, $gray-500, $black, $white, $blue, $blue);
 
-  & &__loading-icon {
+  & > &__loading-icon {
     color: inherit;
     margin-right: 0.3rem;
     font-size: 1em;

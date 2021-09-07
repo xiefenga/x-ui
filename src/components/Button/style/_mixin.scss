@@ -1,10 +1,10 @@
-@import '../../../styles/variables';
+@import '~@/styles/variables';
 @import './variables';
 
-@mixin button-size (
+@mixin button-size(
   $padding-y: $btn-padding-y,
-  $padding-x: $btn-padding-x, 
-  $font-size: $btn-font-size, 
+  $padding-x: $btn-padding-x,
+  $font-size: $btn-font-size,
   $border-raduis: $btn-border-radius
 ) {
   padding: $padding-y $padding-x;
@@ -18,9 +18,8 @@
   $color,
   $hover-background: lighten($background, 10%),
   $hover-border: lighten($border, 10%),
-  $hover-color: $color,
+  $hover-color: $color
 ) {
-
   color: $color;
   background: $background;
   border-color: $border;
@@ -29,23 +28,22 @@
     text-decoration: none;
     color: $hover-color;
     background: $hover-background;
-    border-color: $hover-border;    
+    border-color: $hover-border;
   }
 
   &:focus,
   &.focus {
     color: $hover-color;
     background: $hover-background;
-    border-color: $hover-border;    
+    border-color: $hover-border;
   }
-  
+
   &:disabled,
   &.x-btn--disabled {
     color: $color;
     background: lighten($background, 15%);
     border-color: lighten($border, 15%);
-    // pointer-events: none; 
+    // pointer-events: none;
     cursor: not-allowed;
   }
 }
-

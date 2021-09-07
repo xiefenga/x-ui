@@ -1,6 +1,6 @@
 import React from 'react'
-import Loading from '../Loading'
 import classNames from 'classnames'
+import Icon from '@/components/Icon'
 
 type ButtonSize = 'small' | 'large' | 'middle'
 
@@ -48,7 +48,7 @@ const btnSizeClassName: Record<ButtonSize, string> = {
 
 const testId = process.env.NODE_ENV === 'test' ? { 'data-testid': 'x-button' } : {}
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = props => {
 	const {
 		size = 'middle',
 		type = 'default',
@@ -87,7 +87,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 		return (
 			<a {...anchorProps} {...testId}>
-				{!disabled && loading && <Loading className="x-btn__loading-icon" />}
+				{!disabled && loading && <Icon icon="spinner" spin className="x-btn__loading-icon" />}
 				<span>{children}</span>
 			</a>
 		)
@@ -103,7 +103,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 	return (
 		<button {...buttonProps} {...testId}>
-			{!disabled && loading && <Loading className="x-btn__loading-icon" />}
+			{!disabled && loading && <Icon icon="spinner" spin className="x-btn__loading-icon" />}
 			<span>{children}</span>
 		</button>
 	)
