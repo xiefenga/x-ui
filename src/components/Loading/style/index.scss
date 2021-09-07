@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import "~@/styles/variables";
 
 @keyframes spining {
   from {
@@ -23,14 +23,13 @@
     }
 
     + .x-loading__body {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
-  
 
   &__wrapper {
     position: relative;
-  
+
     .x-loading {
       position: absolute;
       left: 0;
@@ -50,14 +49,14 @@
         .x-loading__inner {
           margin: 0 auto;
         }
-  
+
         .x-loading__tip {
-          padding-top: .1em;
+          padding-top: 0.1em;
         }
       }
     }
   }
-  
+
   &__inner {
     font-size: 24px;
     display: inline-block;
@@ -66,5 +65,3 @@
     line-height: 1;
   }
 }
-
-

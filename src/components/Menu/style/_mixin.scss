@@ -1,15 +1,8 @@
-@import '../../../styles/variables';
-@import './variables';
-
-@mixin initial-list-style {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-}
+@import "~@/styles/variables";
+@import "./variables";
+@import "~@/styles/mixin";
 
 @mixin menu-item-style {
-
   padding: $menu-item-padding-y 0;
   margin: 0 $menu-item-margin-x;
   cursor: pointer;
@@ -18,11 +11,13 @@
   position: relative;
   white-space: nowrap;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     text-decoration: none;
   }
 
-  &-selected, &:hover:not([class*='disabled']) {
+  &-selected,
+  &:hover:not([class*="disabled"]) {
     color: $menu-item-active-color;
   }
 
@@ -36,7 +31,7 @@
 
 @mixin horizontal-item-style {
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: -1px;
     bottom: 0;
@@ -46,21 +41,20 @@
     border-bottom: $menu-item-active-border-width solid transparent;
   }
 
-  &-selected, &:hover:not([class*='disabled']) {
- 
+  &-selected,
+  &:hover:not([class*="disabled"]) {
     &::after {
       border-color: $menu-item-active-color;
     }
   }
 }
 
-
 @mixin vertical-item-style {
   margin: $menu-item-margin-y 0;
   padding: 0 $menu-item-padding-x;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -1px;
@@ -70,11 +64,10 @@
     border-left: $menu-item-active-border-width solid transparent;
   }
 
-  &-selected, &:hover:not([class*='disabled']) {
- 
+  &-selected,
+  &:hover:not([class*="disabled"]) {
     &::after {
       border-color: $menu-item-active-color;
     }
   }
 }
-
