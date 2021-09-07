@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
 import Alert from '../Alert'
+import { render, screen, fireEvent } from '@testing-library/react'
 
 describe('Alert component test', () => {
 	it('should render correctly', () => {
