@@ -1,19 +1,32 @@
 import React from 'react'
+import Icon from '../Icon'
 import classNames from 'classnames'
-import { PropsWithClassName } from '@/types/x-ui'
+import { PropsWithClassName } from '../../types/x-ui'
+
+type LoadingSize = 'default' | 'large' | 'small'
 
 interface LoadingBaseProps {
   tip: string
+	size: LoadingSize
   loading: boolean
   wrapperClassName: string
 }
 
 export type LoadingProps = PropsWithClassName<Partial<LoadingBaseProps>>
 
+const sizeTable: Record<LoadingSize, 'lg' | 'sm' | undefined> = {
+	default: undefined,
+	large: 'lg',
+	small: 'sm'
+}
+
+const testId = process.env.NODE_ENV === 'test' ? { 'data-testid': 'x-loading' } : {}
+
 const Loading: React.FC<LoadingProps> = props => {
 
 	const {
 		tip,
+		size = 'default',
 		children,
 		className,
 		loading = true,
@@ -26,6 +39,17 @@ const Loading: React.FC<LoadingProps> = props => {
 		{ 'x-loading--spinning': loading }
 	)
 
+	const loadingBaseElement = (
+		<div className={classes} {...testId}>
+			<div className="x-loading__container">
+				<span className="x-loading__inner">
+					<Icon className="x-loading__icon" size={sizeTable[size]} icon="spinner" />
+				</span>
+				{tip && <div className="x-loading__tip">{tip}</div>}
+			</div>
+		</div>
+	)
+
 	if (children) {
 
 		const wrapperClasses = classNames(
@@ -35,17 +59,7 @@ const Loading: React.FC<LoadingProps> = props => {
 
 		return (
 			<div className={wrapperClasses}>
-				<div className={classes}>
-					<div className="x-loading__container">
-						<span className="x-loading__inner">
-							<svg viewBox="0 0 1024 1024" focusable="false" fill="currentColor">
-								<path d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z">
-								</path>
-							</svg>
-						</span>
-						{tip && <span className="x-loading__tip">{tip}</span>}
-					</div>
-				</div>
+				{loadingBaseElement}
 				<div className="x-loading__body">
 					{children}
 				</div>
@@ -53,16 +67,9 @@ const Loading: React.FC<LoadingProps> = props => {
 		)
 	}
 
-	return (
-		<div className={classes}>
-			<span className="x-loading__inner">
-				<svg viewBox="0 0 1024 1024" focusable="false" fill="currentColor">
-					<path d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z">
-					</path>
-				</svg>
-			</span>
-		</div>
-	)
+	return loadingBaseElement
 }
+
+Loading.displayName = 'x-loading'
 
 export default Loading

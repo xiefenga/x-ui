@@ -1,21 +1,29 @@
 interface LoadingBaseProps {
   /**
+   * 自定义描述文案
+   */
+  tip: string
+  /**
+   * 组件的尺寸
+   */
+  size: 'large' | 'small' | 'default'
+  /**
    * 加载状态
    */
-  loading: boolean;
+  loading: boolean
   /**
-   * 提示消息
+   * 当具有子元素时，给组件最外层元素的类名
    */
-  tip: string;
-  wrapperClassName: string;
+  wrapperClassName?: string
 }
 
-export type LoadingProps = Partial<LoadingBaseProps>;
+export type LoadingProps = Partial<LoadingBaseProps>
 
 const Loading: React.FC<LoadingProps> = () => null
 
 Loading.defaultProps = {
 	loading: false,
+	size: 'default'
 }
 
 export default Loading
