@@ -9,7 +9,12 @@
     "sourceMap": true,
     "baseUrl": "./",
     "strict": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules",

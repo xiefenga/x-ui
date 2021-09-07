@@ -9,4 +9,13 @@ export default defineConfig({
   sass: {
     implementation: require("node-sass"),
   },
+  alias: {
+    '@': 'src'
+  },
+  apiParser: {
+    propFilter: {
+      // 忽略从 node_modules 继承的属性
+      skipNodeModules: true
+    }
+  }
 });
