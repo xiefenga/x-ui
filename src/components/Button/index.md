@@ -37,6 +37,25 @@ export default () => (
 );
 ```
 
+## 可跳转
+
+```tsx
+import React from "react";
+import { Button } from "x-ui";
+
+const style = { style: { marginLeft: "10px" } };
+
+export default () => (
+   <React.Fragment>
+    <Button type="primary" href="https://baidu.com">跳转百度</Button>
+    <Button href="https://baidu.com" target="_blank" type="link" {...style}>
+      支持 target
+    </Button>
+  </React.Fragment>
+)
+```
+
+
 ## disabled 状态
 
 ```tsx
