@@ -1,6 +1,6 @@
 import React from 'react'
+import Icon from '../Icon'
 import classNames from 'classnames'
-import Icon from '@/components/Icon'
 
 type ButtonSize = 'small' | 'large' | 'middle'
 
