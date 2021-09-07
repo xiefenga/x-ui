@@ -1,15 +1,16 @@
 import React from 'react'
 import classNames from 'classnames'
-import { PropsWithClassName } from 'x-ui'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 
 type ThemeProps = 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark'
 
-interface IconBaseProps extends FontAwesomeIconProps {
-	theme?: ThemeProps
+interface IconBaseProps {
+	theme: ThemeProps
 }
 
-export type IconProps = PropsWithClassName<IconBaseProps>
+export type IconProps = Partial<IconBaseProps> & FontAwesomeIconProps
+
+const testId = process.env.NODE_ENV === 'test' ? { 'data-testid': 'x-icon' } : {}
 
 const Icon: React.FC<IconProps> = props => {
 
@@ -27,10 +28,13 @@ const Icon: React.FC<IconProps> = props => {
 
 	return (
 		<FontAwesomeIcon
-			className={classes}
+			{...testId}
 			{...restProps}
+			className={classes}
 		/>
 	)
 }
+
+Icon.displayName = 'x-icon'
 
 export default Icon

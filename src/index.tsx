@@ -27,3 +27,7 @@ export type { AlertProps } from './components/Alert'
 export { default as Tab } from './components/Tab'
 
 export type { TabProps } from './components/Tab'
+
+export { default as Icon } from './components/Icon'
+
+export type { IconProps } from './components/Icon'
