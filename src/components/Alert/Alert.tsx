@@ -1,7 +1,7 @@
 import Icon from '../Icon'
 import classNames from 'classnames'
 import React, { useState } from 'react'
-import { PropsWithClassName } from '@/types/x-ui'
+import { PropsWithClassName } from '../../types/x-ui'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 interface AlertBaseProps {
@@ -15,7 +15,7 @@ export type AlertProps = PropsWithClassName<AlertBaseProps>
 
 const testId = process.env.NODE_ENV === 'test' ? { 'data-testid': 'x-alert' } : {}
 
-const Alert: React.FC<AlertProps> = (props) => {
+const Alert: React.VFC<AlertProps> = (props) => {
 	const {
 		icon,
 		className,
