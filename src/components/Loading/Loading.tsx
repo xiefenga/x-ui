@@ -1,10 +1,10 @@
 import React from 'react'
 import classNames from 'classnames'
-import { PropsWithClassName } from 'x-ui'
+import { PropsWithClassName } from '@/types/x-ui'
 
 interface LoadingBaseProps {
-  loading: boolean
   tip: string
+  loading: boolean
   wrapperClassName: string
 }
 

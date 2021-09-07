@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { PropsWithClassName } from 'x-ui'
+import { PropsWithClassName } from '@/types/x-ui'
 import SubMenu, { isSubMenuElement } from './SubMenu'
 import MenuItem, { isMenuItemElement } from './MenuItem'
 import MenuContext, { MenuContextProps } from './MenuContext'
@@ -49,7 +49,6 @@ const Menu: MenuComponent<MenuProps> = props => {
 		subMenuOpenDelay,
 		subMenuCloseDelay,
 		defaultOpenSubMenus,
-
 	}
 
 	const validateChildren = React.Children.map(children, (child, i) => {

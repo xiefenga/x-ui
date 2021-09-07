@@ -1,7 +1,7 @@
 import Icon from '../Icon'
 import classNames from 'classnames'
 import React, { useState } from 'react'
-import { PropsWithClassName } from 'x-ui'
+import { PropsWithClassName } from '@/types/x-ui'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 interface AlertBaseProps {

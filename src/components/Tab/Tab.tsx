@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { PropsWithClassName } from 'x-ui'
+import { PropsWithClassName } from '@/types/x-ui'
 import TabPane, { isTabPaneElement } from './TabPane'
 import React, { ReactNode, useEffect, useState } from 'react'
 

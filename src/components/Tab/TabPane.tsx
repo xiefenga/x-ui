@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { PropsWithClassName, UnknowReactElement, UnkownFCElement } from 'x-ui'
+import { PropsWithClassName, UnknowReactElement, UnkownFCElement } from '@/types/x-ui'
 
 interface TabPaneBaseProps {
   tab: string

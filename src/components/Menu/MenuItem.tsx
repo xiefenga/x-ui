@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import MenuContext from './MenuContext'
 import React, { useContext } from 'react'
-import { PropsWithClassName, UnknowReactElement, UnkownFCElement } from 'x-ui'
+import { PropsWithClassName, UnknowReactElement, UnkownFCElement } from '@/types/x-ui'
 
 interface MenuItemBaseProps {
   index: string

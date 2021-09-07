@@ -1,47 +1,44 @@
 import React from 'react'
 import Loading from '../Loading'
 import classNames from 'classnames'
-import { PropsWithCS } from 'x-ui'
 
 type ButtonSize = 'small' | 'large' | 'middle'
 
 type ButtonShape = 'circle' | 'round'
 
 type ButtonType =
-  | 'default'
-  | 'primary'
-  | 'link'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
+	| 'default'
+	| 'primary'
+	| 'link'
+	| 'success'
+	| 'info'
+	| 'warning'
+	| 'danger'
 
 type ButtonHTMLType = 'submit' | 'button' | 'reset'
 
 interface ButtonBaseProps {
-  disabled: boolean
-  size: ButtonSize
-  type: ButtonType
-  block: boolean
-  shape: ButtonShape
-  loading: boolean
-  onClick: React.MouseEventHandler<HTMLElement>
+	disabled: boolean
+	size: ButtonSize
+	type: ButtonType
+	block: boolean
+	shape: ButtonShape
+	loading: boolean
+	onClick: React.MouseEventHandler<HTMLElement>
 }
 
+type OmitButtonHTMLAttributes = Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type' | 'onClick'>
+
 type AnchorButtonProps = {
-  href: string
-  target: string
-} & ButtonBaseProps &
-  Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type' | 'onClick'>
+	href: string
+	target: string
+} & ButtonBaseProps & OmitButtonHTMLAttributes
 
 type NativeButtonProps = {
-  htmlType: ButtonHTMLType
-} & ButtonBaseProps &
-  Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type' | 'onClick'>
+	htmlType: ButtonHTMLType
+} & ButtonBaseProps & OmitButtonHTMLAttributes
 
-export type ButtonProps = PropsWithCS<
-  Partial<NativeButtonProps & AnchorButtonProps>
->
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 const btnSizeClassName: Record<ButtonSize, string> = {
 	large: 'x-btn--lg',
@@ -49,8 +46,7 @@ const btnSizeClassName: Record<ButtonSize, string> = {
 	small: 'x-btn--sm',
 }
 
-const testId =
-  process.env.NODE_ENV === 'test' ? { 'data-testid': 'x-button' } : {}
+const testId = process.env.NODE_ENV === 'test' ? { 'data-testid': 'x-button' } : {}
 
 const Button: React.FC<ButtonProps> = (props) => {
 	const {

@@ -1,22 +1,21 @@
 import Icon from '../Icon'
-import { PropsWithCS } from 'x-ui'
 import classNames from 'classnames'
+import { PropsWithClassAndStyle } from '@/types/x-ui'
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 
 type InputSize = 'large' | 'middle' | 'small'
 
 interface InputBaseProps {
-  allowClear: boolean
-  defaultValue: string
-  disabled: boolean
-  size: InputSize
-  value: string
-  onChange: React.ChangeEventHandler<HTMLInputElement>
+	allowClear: boolean
+	defaultValue: string
+	disabled: boolean
+	size: InputSize
+	value: string
+	onChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-export type InputProps = PropsWithCS<
-  Partial<InputBaseProps> &
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'value'>
+export type InputProps = PropsWithClassAndStyle<
+	Partial<InputBaseProps> & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'value'>
 >
 
 const inputSizeClassName: Record<InputSize, string> = {
@@ -25,10 +24,7 @@ const inputSizeClassName: Record<InputSize, string> = {
 	small: 'x-input--sm',
 }
 
-const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-	HTMLInputElement.prototype,
-	'value'
-)!.set!
+const nativeInputValueSetter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!
 
 const Input: React.FC<InputProps> = (props) => {
 	const {
@@ -43,9 +39,7 @@ const Input: React.FC<InputProps> = (props) => {
 
 	const inputRef = useRef<HTMLInputElement>(null)
 
-	const [showClear, setShowClear] = useState<boolean>(
-		!!(props.value || defaultValue)
-	)
+	const [showClear, setShowClear] = useState<boolean>(!!(props.value || defaultValue))
 
 	useEffect(() => {
 		if (defaultValue !== undefined && props.value === undefined) {
@@ -77,11 +71,11 @@ const Input: React.FC<InputProps> = (props) => {
 				const event = document.createEvent('UIEvent')
 				event.initEvent('input', true, true)
 
-        // 原生 set ，清空
-        nativeInputValueSetter!.call(inputRef.current, '')
+				// 原生 set ，清空
+				nativeInputValueSetter!.call(inputRef.current, '')
 
-        // 手动分发事件，触发 react onChange
-        inputRef.current.dispatchEvent(event)
+				// 手动分发事件，触发 react onChange
+				inputRef.current.dispatchEvent(event)
 			}
 		}
 
