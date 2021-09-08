@@ -1,0 +1,36 @@
+@import './variables';
+@import './mixin';
+
+.x-switch {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.4s;
+  @include switch-style($switch-width, $switch-height, $switch-border-radius);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0.1rem;
+    border-radius: 50%;
+    background-color: $white;
+    background-clip: content-box;
+    background-origin: content-box;
+    transition: left 0.4s;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    background-color: lighten($primary, 30)
+  }
+
+  &--sm {
+    @include switch-style($switch-width-sm, $switch-height-sm, $switch-border-radius-sm);
+  }
+
+  &--checked {
+    background-color: $primary;
+  }
+}

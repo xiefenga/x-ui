@@ -31,3 +31,7 @@ export type { TabProps } from './components/Tab'
 export { default as Icon } from './components/Icon'
 
 export type { IconProps } from './components/Icon'
+
+export { default as Switch } from './components/Switch'
+
+export type { SwitchProps } from './components/Switch'

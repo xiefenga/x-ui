@@ -1,0 +1,16 @@
+@mixin switch-style($width, $height, $border-radius) {
+  height: $height;
+  width: $width;
+  border-radius: $border-radius;
+
+  &::before {
+    height: $height;
+    width: $height;
+  }
+
+  &.x-switch--checked {
+    &::before {
+      left: calc(100% - #{$height});
+    }
+  }
+}
