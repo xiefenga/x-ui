@@ -7,6 +7,10 @@ export interface AlertProps {
    */
   message: string
   /**
+   * 提示的样式
+   */
+  type?: 'success' | 'info' | 'warning' | 'error'
+  /**
    * icon名称或组件
    */
   icon?: IconProp
@@ -17,13 +21,14 @@ export interface AlertProps {
   /**
    * 关闭触发事件
    */
-  onClose?: (e: React.MouseEvent<SVGSVGElement>) => void
+  onClose?: (e: MouseEvent) => void
 }
 
 const Alert: React.FC<AlertProps> = () => null
 
 Alert.defaultProps = {
-	closeable: false
+	closeable: false,
+	type: 'warning'
 }
 
 export default Alert

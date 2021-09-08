@@ -1,0 +1,11 @@
+@import '~@/styles/variables';
+
+$type-colors: (
+  'success':  $success,
+  'info':     $info,
+  'warning':  $warning,
+  'error':   $danger,
+);
+
+$margin-y: 0.75rem;
+$margin-x: 1rem;

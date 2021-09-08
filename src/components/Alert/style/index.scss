@@ -1,24 +1,27 @@
-@import '../../../styles/variables';
-
-$margin: 1rem;
-$box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem $white;
+@import './variables';
 
 .x-alert {
-  border-radius: 1rem;
-  box-shadow: $box-shadow;
   display: flex;
   align-items: center;
+  border-radius: $border-radius;
+
+  @each $type, $color in $type-colors {
+   &.x-alert--#{$type} {
+      border: 1px solid $color;
+      background-color: lighten($color, 40%)
+    }
+  }
 
   &__icon {
-    margin-left: $margin;
+    margin-left: $margin-x;
   }
 
   &__text {
-    margin: $margin;
+    margin: $margin-y $margin-x;
   }
 
   &__close {
-    margin: $margin;
+    margin: $margin-x;
     margin-left: auto;
     cursor: pointer;
     transition: color .3s;
@@ -26,5 +29,16 @@ $box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem $white;
     &:hover {
       color: lighten(#000, 50);
     }
+  }
+
+  &--exit {
+    opacity: 1;
+  }
+
+  &--exitActive {
+    max-height: 0!important;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.3s, max-height 0.3s;
   }
 }
