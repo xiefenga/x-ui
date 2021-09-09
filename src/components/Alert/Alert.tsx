@@ -18,6 +18,11 @@ interface AlertBaseProps {
 
 export type AlertProps = PropsWithClassAndStyle<AlertBaseProps>
 
+const transitionClass: CSSTransitionClassNames = {
+	exit: 'x-alert--exit',
+	exitActive: 'x-alert--exitActive'
+}
+
 const Alert: React.VFC<AlertProps> = (props) => {
 	const {
 		icon,
@@ -50,11 +55,6 @@ const Alert: React.VFC<AlertProps> = (props) => {
 	const onClick: React.MouseEventHandler<SVGSVGElement> = (e) => {
 		onClose && onClose(e)
 		setClosed(true)
-	}
-
-	const transitionClass: CSSTransitionClassNames = {
-		exit: 'x-alert--exit',
-		exitActive: 'x-alert--exitActive'
 	}
 
 	return (
