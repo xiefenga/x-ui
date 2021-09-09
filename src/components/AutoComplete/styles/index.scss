@@ -1,0 +1,53 @@
+@import "~@/styles/mixin";
+@import "./variables";
+
+.x-autocomplete {
+  position: relative;
+}
+
+.x-autocomplete__list {
+  @include initial-list-style;
+  background-color: $white;
+  margin-top: 0.3rem;
+  box-shadow: $list-box-shadow;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  max-height: ($item-line-height + 1rem) * 5;
+  overflow: auto;
+
+  &--enter {
+    max-height: 0;
+  }
+
+  &--enterActive {
+    transition: max-height 0.4s 0.1s;
+    max-height: ($item-line-height + 1rem) * 5;
+  }
+
+  &--exit {
+    max-height: ($item-line-height + 1rem) * 5;
+  }
+
+  &--exitActive {
+    transition: max-height 0.4s 0.1s;
+    max-height: 0;
+  }
+
+  &-item {
+    cursor: pointer;
+    line-height: $item-line-height;
+    padding: 0 0.5rem;
+    transition: background-color 0.5s;
+    background-color: $white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background-color: $item-hover-bg;
+    }
+  }
+}
