@@ -1,6 +1,10 @@
 import React from 'react'
-
+import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 export interface IconProps {
+  /**
+   * 图标，和 FontAwesomeIcon 相同，除了 light 图标
+   */
+  icon: FontAwesomeIconProps
   /**
    * 主题色
    */

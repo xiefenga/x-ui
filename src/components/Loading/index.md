@@ -16,6 +16,11 @@ export default () => <Loading loading />;
 ## 不同大小
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Loading } from "x-ui";
 
@@ -33,6 +38,11 @@ export default () => (
 可以自定义描述文案
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Loading } from "x-ui";
 
@@ -44,6 +54,11 @@ export default () => <Loading loading tip="加载中" />;
 把内容内嵌到 Loading 中，将现有容器变为加载状态
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React, { useState } from "react";
 import { Loading, Button } from "x-ui";
 

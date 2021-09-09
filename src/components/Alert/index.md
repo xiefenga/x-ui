@@ -5,7 +5,11 @@ title: Alert
 ## 基本使用
 
 ```tsx
-
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Alert } from 'x-ui'
 
@@ -15,6 +19,11 @@ export default () => <Alert message="warning Text" />
 ## 不同样式
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Alert } from 'x-ui'
 
@@ -34,7 +43,11 @@ export default () => (
 ## 显示 icon
 
 ```tsx
-
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Alert } from 'x-ui'
 
@@ -45,7 +58,11 @@ export default () => <Alert icon="info-circle" message="warning Text" />
 ## 可关闭
 
 ```tsx
-
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Alert } from 'x-ui'
 

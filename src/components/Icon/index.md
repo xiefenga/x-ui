@@ -5,6 +5,11 @@ title: Icon
 ## 基本使用
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Icon } from "x-ui";
 
@@ -34,6 +39,11 @@ export default () => (
 ## 支持主题色
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Icon } from "x-ui";
 
@@ -63,6 +73,11 @@ export default () => (
 ## 旋转
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Icon } from "x-ui";
 
@@ -84,6 +99,11 @@ export default () => (
 ## 不同尺寸
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Icon } from "x-ui";
 

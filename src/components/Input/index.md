@@ -5,7 +5,11 @@ title: Input
 ## 不同大小
 
 ```tsx
-
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Input } from "x-ui";
 
@@ -23,7 +27,11 @@ export default () => (
 ## 受控和非受控
 
 ```tsx
-
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import { Input } from "x-ui";
 import React, { useState } from "react";
 
@@ -43,7 +51,11 @@ export default () => {
 ## 禁用
 
 ```tsx
-
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import { Input } from "x-ui";
 import React, { useState } from "react";
 
@@ -70,7 +82,11 @@ export default () => {
 ## 带移除图标
 
 ```tsx
-
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import { Input } from "x-ui";
 import React, { useState } from "react";
 

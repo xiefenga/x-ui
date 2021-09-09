@@ -7,6 +7,11 @@ group:
 ## 按钮类型
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Button } from "x-ui";
 
@@ -40,6 +45,11 @@ export default () => (
 ## 可跳转
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Button } from "x-ui";
 
@@ -59,6 +69,11 @@ export default () => (
 ## disabled 状态
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Button } from "x-ui";
 
@@ -92,6 +107,11 @@ export default () => (
 ## loading 状态
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Button } from "x-ui";
 
@@ -124,6 +144,11 @@ export default () => (
 ## 不同尺寸
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Button } from "x-ui";
 
@@ -151,6 +176,11 @@ export default () => (
 ## block 按钮
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Button } from "x-ui";
 
