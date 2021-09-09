@@ -7,6 +7,11 @@ group:
 ## 基础用法
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React from "react";
 import { Loading } from "x-ui";
 

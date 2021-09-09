@@ -5,6 +5,11 @@ title: AutoComplete
 ## 基本使用
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React, { useState } from "react";
 import AutoComplete from "./AutoComplete";
 
@@ -33,6 +38,11 @@ export default () => {
 ## 受控模式
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React, { useState } from "react";
 import AutoComplete from "./AutoComplete";
 
@@ -62,6 +72,11 @@ export default () => {
 ## 禁用
 
 ```tsx
+/**
+ * hideActions:
+ *  - CSB
+ *  - EXTERNAL
+ */
 import React, { useState } from "react";
 import AutoComplete from "./AutoComplete";
 
