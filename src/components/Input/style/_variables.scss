@@ -1,36 +1,30 @@
-@import "../../../styles/variables";
+@import "~@/styles/variables";
 
-$input-bg:                    #E3EDF7;
 $input-color:                 #31456A;
 
 $input-clear-icon-color:      #00000040;
 
-$input-clear-icon-color-hover: #00000073;
+$input-clear-icon-color-hover:#00000073;
 
 $input-disabled-bg:           #f5f5f5;
 
-$input-padding-y:               0.5rem !default;
-$input-padding-x:               0.8rem !default;
-$input-font-family:             $font-family-base !default;
-$input-font-size:               $font-size-base !default;
-$input-line-height:             $line-height-base !default;
+$input-transition:              border-color 0.3s, box-shadow 0.3s;
 
-$input-padding-y-sm:            0.25rem !default;
-$input-padding-x-sm:            0.5rem !default;
-$input-font-size-sm:            $font-size-sm !default;
+$input-border-radius:           0.2rem;
+$input-border:                  1px solid $gray-500;
+$input-border-hover-color:      $primary;
 
-$input-padding-y-lg:            0.7rem !default;
-$input-padding-x-lg:            1rem !default;
-$input-font-size-lg:            $font-size-lg !default;
+$input-shadow:                  0 0 0 0 lighten($input-border-hover-color, 35);
+$input-focus-shadow:            0 0 0 2px lighten($input-border-hover-color, 35);
 
-$input-border-radius:           0.5rem !default;
-$input-border-radius-lg:        0.7rem !default;
-$input-border-radius-sm:        0.35rem !default;
 
-$input-shadow:                  inset 0.2rem 0.2rem 0.5rem #c8d0e7,
-                                inset -0.2rem -0.2rem 0.5rem #FFFFFF;
-                                
-$input-focus-shadow:            0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #FFFFFF;
+$input-padding-y:               0.2rem;
+$input-padding-x:               0.5rem;
+$input-font-family:             $font-family-base;
+$input-font-size:               $font-size-base;
+$input-line-height:             $line-height-base;
 
-$input-disabled-shadow:         -3px -3px 7px #FFFFFF,
-                                2px 2px 5px rgba(136, 165, 191, 0.38);
+$input-font-size-sm:            $font-size-sm;
+
+$input-font-size-lg:            $font-size-lg;
+

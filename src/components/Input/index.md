@@ -5,9 +5,6 @@ title: Input
 ## 不同大小
 
 ```tsx
-/**
- * background: '#EBF3FA'
- */
 
 import React from "react";
 import { Input } from "x-ui";
@@ -26,9 +23,6 @@ export default () => (
 ## 受控和非受控
 
 ```tsx
-/**
- * background: '#EBF3FA'
- */
 
 import { Input } from "x-ui";
 import React, { useState } from "react";
@@ -49,9 +43,6 @@ export default () => {
 ## 禁用
 
 ```tsx
-/**
- * background: '#EBF3FA'
- */
 
 import { Input } from "x-ui";
 import React, { useState } from "react";
@@ -79,9 +70,6 @@ export default () => {
 ## 带移除图标
 
 ```tsx
-/**
- * background: '#EBF3FA'
- */
 
 import { Input } from "x-ui";
 import React, { useState } from "react";

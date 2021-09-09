@@ -1,6 +1,6 @@
 import Icon from '../Icon'
 import classNames from 'classnames'
-import { PropsWithClassAndStyle } from '@/types/x-ui'
+import { PropsWithClassAndStyle } from '../../types/x-ui'
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 
 type InputSize = 'large' | 'middle' | 'small'

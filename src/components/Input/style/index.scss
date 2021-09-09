@@ -1,52 +1,58 @@
 @import "./variables";
 
 .x-input {
+
   input {
-    border: none;
     outline: none;
-    padding: 0;
   }
 
-  .x-input__inner {
+  &:hover  {
+    .x-input__inner:not(:disabled) {
+      border-color: $input-border-hover-color;
+    }
+  }
+
+  &__inner {
     width: 100%;
-    font-size: $input-font-size;
-    line-height: $input-line-height;
-    padding: $input-padding-y $input-padding-x;
-    background: $input-bg;
-    box-shadow: $input-shadow;
-    border-radius: $input-border-radius;
     color: $input-color;
+    border: $input-border;
+    box-shadow: $input-shadow;
+    transition: $input-transition;
+    line-height: $input-line-height;
+    border-radius: $input-border-radius;
+    padding: $input-padding-y $input-padding-x;
 
     &:focus {
+      border-color: $input-border-hover-color;
       box-shadow: $input-focus-shadow;
     }
 
     &::selection {
-      background-color: darken($input-bg, 10);
+      color: $white;
+      background-color: $primary;
     }
 
     &:disabled {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.25);
       background-color: $input-disabled-bg;
-      box-shadow: $input-disabled-shadow;
     }
+  }
+
+  .x-input__inner {
+    font-size: $input-font-size;
   }
 }
 
 .x-input--sm {
   .x-input__inner {
     font-size: $input-font-size-sm;
-    padding: $input-padding-y-sm $input-padding-x-sm;
-    border-radius: $input-border-radius-sm;
   }
 }
 
 .x-input--lg {
   .x-input__inner {
     font-size: $input-font-size-lg;
-    padding: $input-padding-y-lg $input-padding-x-lg;
-    border-radius: $input-border-radius-lg;
   }
 }
 
@@ -54,13 +60,13 @@
   position: relative;
 
   .x-input__inner {
-    padding-right: $input-padding-y-lg * 3;
+    padding-right: $input-padding-y * 2 + $font-size-base;
   }
 
   .x-input__clear {
     position: absolute;
     top: 50%;
-    right: $input-padding-y-lg * 1.2;
+    right: $input-padding-y * 1.2;
     transform: translateY(-50%);
     color: $input-clear-icon-color;
     transition: color 0.3s;
