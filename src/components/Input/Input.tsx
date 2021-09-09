@@ -56,14 +56,24 @@ const Input: React.FC<InputProps> = (props) => {
 		}
 	})
 
-	const classes = classNames('x-input', className, inputSizeClassName[size], {
-		'x-input--clearable': allowClear,
-	})
+	const classes = classNames(
+		'x-input', 
+		className, 
+		inputSizeClassName[size], 
+		{ 'x-input--clearable': allowClear },
+	)
+
+	const internalOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+		if (!props.disabled) {
+			onChange && onChange(e)
+		}
+	}
 
 	if (allowClear) {
-		const clearClasses = classNames('x-input__clear', {
-			'x-input__clear--hidden': !showClear,
-		})
+		const clearClasses = classNames(
+			'x-input__clear', 
+			{ 'x-input__clear--hidden': !showClear },
+		)
 
 		const clearInputValue = () => {
 			if (inputRef.current) {
@@ -81,7 +91,7 @@ const Input: React.FC<InputProps> = (props) => {
 
 		const watchChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 			setShowClear(e.target.value !== '')
-			onChange && onChange(e)
+			internalOnChange(e)
 		}
 
 		return (
@@ -106,11 +116,13 @@ const Input: React.FC<InputProps> = (props) => {
 				{...rest}
 				type={type}
 				ref={inputRef}
-				onChange={onChange}
+				onChange={internalOnChange}
 				className="x-input__inner"
 			/>
 		</div>
 	)
 }
+
+Input.displayName = 'x-input'
 
 export default Input
