@@ -35,3 +35,7 @@ export type { IconProps } from './components/Icon'
 export { default as Switch } from './components/Switch'
 
 export type { SwitchProps } from './components/Switch'
+
+export { default as Upload } from './components/Upload'
+
+export type { UploadProps, UploadFile } from './components/Upload'

@@ -1,0 +1,14 @@
+@import '~@/styles/variables';
+
+$upload-list-margin:  0.75rem;
+$upload-icon-gap:     0.5rem;
+
+$upload-item-font-size:   $font-size-sm;
+$upload-item-line-height: 1.5rem;
+
+$upload-item-padding:     0.5rem;
+
+$upload-item-error-color: $danger;
+
+$drag-background-color:   $gray-100;
+$drag-border-color:       $gray-400;
