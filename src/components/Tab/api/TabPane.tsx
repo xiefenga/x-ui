@@ -1,8 +1,8 @@
 export interface TabPaneProps {
   /**
-   * 选项卡头显示文字
+   * 选项卡头显示内容
    */
-  tab: string
+  tab: React.ReactNode
   /**
    * 对应 activeKey
    */

@@ -9,6 +9,10 @@ export interface TabProps {
    */
   defaultActiveKey?: string
   /**
+   * tab 的样式
+   */
+  type?: 'line' | 'card'
+  /**
    * 切换 tab 的回调
    */
   onChange?: (key: string) => void
@@ -21,7 +25,8 @@ export interface TabProps {
 const Tab: React.FC<TabProps> = () => null
 
 Tab.defaultProps = {
-	defaultActiveKey: '第一个tab'
+	defaultActiveKey: '第一个tab',
+	type: 'line'
 }
 
 export default Tab
