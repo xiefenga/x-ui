@@ -65,19 +65,18 @@ export default () => <Loading loading tip="加载中" />;
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { Loading, Button } from "x-ui";
+import { Loading, Switch } from "x-ui";
 
 export default () => {
   const [loading, setLoading] = useState(false);
 
-  const onClick = () => setLoading(!loading);
+  const toogle = () => setLoading(!loading);
 
   return (
     <React.Fragment>
       <div>
-        <Button size="small" onClick={onClick}>
-          loading state：{loading + ""}
-        </Button>
+        <span>loading: </span>
+        <Switch checked={loading} onChange={toogle}/>
       </div>
       <br />
       <Loading loading={loading} tip="加载中">

@@ -15,11 +15,11 @@ import { Input } from "x-ui";
 
 export default () => (
   <React.Fragment>
-    <Input size="small" />
+    <Input placeholder="请输入内容" size="small" />
     <br />
-    <Input />
+    <Input placeholder="请输入内容" />
     <br />
-    <Input size="large" />
+    <Input placeholder="请输入内容" size="large" />
   </React.Fragment>
 );
 ```
@@ -40,9 +40,9 @@ export default () => {
 
   return (
     <React.Fragment>
-      <Input defaultValue="aaa" />
+      <Input placeholder="请输入内容" defaultValue="aaa" />
       <br />
-      <Input value={value} onChange={(e) => setValue(e.target.value)} />
+      <Input placeholder="请输入内容" value={value} onChange={(e) => setValue(e.target.value)} />
     </React.Fragment>
   );
 };

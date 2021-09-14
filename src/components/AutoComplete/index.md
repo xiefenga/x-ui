@@ -30,7 +30,7 @@ export default () => {
   };
 
   return (
-    <AutoComplete onSelect={onSelect} onSearch={onSearch} options={options} />
+    <AutoComplete placeholder="请输入内容" onSelect={onSelect} onSearch={onSearch} options={options} />
   );
 };
 ```
@@ -64,7 +64,7 @@ export default () => {
   };
 
   return (
-    <AutoComplete value={val} onChange={setVal} onSelect={onSelect} onSearch={onSearch} options={options} />
+    <AutoComplete placeholder="请输入内容" value={val} onChange={setVal} onSelect={onSelect} onSearch={onSearch} options={options} />
   );
 };
 ```
