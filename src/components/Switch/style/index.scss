@@ -5,6 +5,7 @@
   border: none;
   cursor: pointer;
   position: relative;
+  vertical-align: middle;
   transition: background-color 0.4s;
   @include switch-style($switch-width, $switch-height, $switch-border-radius);
 
