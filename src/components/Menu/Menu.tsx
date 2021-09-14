@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
-import { PropsWithClassName } from '@/types/x-ui'
+import { PropsWithClassName } from '../../types/x-ui'
 import SubMenu, { isSubMenuElement } from './SubMenu'
 import MenuItem, { isMenuItemElement } from './MenuItem'
 import MenuContext, { MenuContextProps } from './MenuContext'
@@ -8,19 +8,22 @@ import MenuContext, { MenuContextProps } from './MenuContext'
 export type MenuMode = 'vertical' | 'horizontal'
 
 interface MenuBaseProps {
-  mode: MenuMode,
-  selectedIndex: string
-  defaultOpenSubMenus: string[]
-  onSelect: (index: string) => void
-  subMenuCloseDelay: number
-  subMenuOpenDelay: number
+	mode: MenuMode,
+	selectedKeys: string[]
+	openKeys: string[]
+	defaultSelectedKeys: string[]
+	defaultOpenKeys: string[]
+	onSelect: (key: string) => void
+	onOpenChange: (opeKeys: string[]) => void
+	subMenuCloseDelay: number
+	subMenuOpenDelay: number
 }
 
 export type MenuProps = PropsWithClassName<Partial<MenuBaseProps>>
 
 interface MenuComponent<P> extends React.FC<P> {
-  Item: typeof MenuItem
-  SubMenu: typeof SubMenu
+	Item: typeof MenuItem
+	SubMenu: typeof SubMenu
 }
 
 const Menu: MenuComponent<MenuProps> = props => {
@@ -29,12 +32,19 @@ const Menu: MenuComponent<MenuProps> = props => {
 		className,
 		children,
 		mode = 'horizontal',
-		selectedIndex = '',
 		onSelect,
-		defaultOpenSubMenus = [],
+		onOpenChange,
+		selectedKeys,
+		openKeys,
+		defaultSelectedKeys = [],
+		defaultOpenKeys = [],
 		subMenuCloseDelay = 0.1,
 		subMenuOpenDelay = 0
 	} = props
+
+	const [internalSelectedKeys, setInternalSelectedKeys] = useState<string[]>(defaultSelectedKeys)
+
+	const [internalOpenKeys, setInternalOpenKeys] = useState<string[]>(defaultOpenKeys)
 
 	const classes = classNames(
 		'x-menu',
@@ -42,13 +52,29 @@ const Menu: MenuComponent<MenuProps> = props => {
 		`x-menu-${mode}`
 	)
 
+	const internalOnSelect = (key: string) => {
+		if (typeof selectedKeys === 'undefined') {
+			setInternalSelectedKeys([key])
+		}
+		onSelect &&	onSelect(key)
+	}
+
+	const onInternalOpenChange = (key: string, toogle: boolean) => {
+		const keys = toogle ? [key] : []
+		onOpenChange && onOpenChange(keys)
+		if (typeof openKeys === 'undefined') {
+			setInternalOpenKeys(keys)
+		}
+	}
+
 	const ctxVal: MenuContextProps = {
 		mode,
-		onSelect,
-		selectedIndex,
+		onInternalOpenChange,
+		onSelect: internalOnSelect,
+		openKeys: openKeys ?? internalOpenKeys,
+		selectedKeys: selectedKeys ?? internalSelectedKeys,
 		subMenuOpenDelay,
-		subMenuCloseDelay,
-		defaultOpenSubMenus,
+		subMenuCloseDelay
 	}
 
 	const validateChildren = React.Children.map(children, (child, i) => {
@@ -56,9 +82,11 @@ const Menu: MenuComponent<MenuProps> = props => {
 		if (React.isValidElement(child)) {
 			if (isMenuItemElement(child) || isSubMenuElement(child)) {
 				const props = child.props
+				const key = child.key ?? `x-menu-item-${i}`
 				return React.cloneElement(child, {
-					index: `def_index-${i}`,
-					...props
+					...props,
+					key,
+					$index: key as string
 				})
 			}
 		}

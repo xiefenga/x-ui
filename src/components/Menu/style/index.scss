@@ -39,6 +39,8 @@
     &-wrapper {
       @include initial-list-style;
       display: none;
+      overflow: hidden;
+      transition: height 0.3s;
     }
 
     &-open:not([class*="disabled"]) {

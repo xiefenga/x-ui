@@ -8,7 +8,7 @@ export { default as Loading } from './components/Loading'
 
 export type { LoadingProps } from './components/Loading'
 
-export { default as Menu, MenuItem, SubMenu } from './components/Menu'
+export { default as Menu } from './components/Menu'
 
 export type { MenuProps, MenuItemProps, SubMenuProps } from './components/Menu'
 

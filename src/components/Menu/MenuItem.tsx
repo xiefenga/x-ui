@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import { PropsWithClassName, UnknowReactElement, UnkownFCElement } from '@/types/x-ui'
 
 interface MenuItemBaseProps {
-  index: string
+  $index: string
   disabled: boolean
 }
 
@@ -13,12 +13,12 @@ export type MenuItemProps = PropsWithClassName<Partial<MenuItemBaseProps>>
 const MenuItem: React.FC<MenuItemProps> = props => {
 
 	const {
-		selectedIndex,
+		selectedKeys,
 		onSelect
 	} = useContext(MenuContext)
 
 	const {
-		index = '',
+		$index = '',
 		disabled = false,
 		className,
 		children
@@ -28,10 +28,14 @@ const MenuItem: React.FC<MenuItemProps> = props => {
 		'x-menu-item',
 		className,
 		{ 'x-menu-item-disabled': disabled },
-		{ 'x-menu-item-selected': selectedIndex === index }
+		{ 'x-menu-item-selected': selectedKeys.includes($index) }
 	)
 
-	const onClick = () => !disabled && onSelect && onSelect(index)
+	const onClick = () => {
+		if (!disabled && onSelect) {
+			onSelect($index)
+		}
+	}
 
 	return (
 		<li className={classes} onClick={onClick}>

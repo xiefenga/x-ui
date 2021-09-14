@@ -2,20 +2,22 @@ import { MenuMode } from './Menu'
 import { createContext } from 'react'
 
 export interface MenuContextProps {
-  selectedIndex: string
+  selectedKeys: string[]
   subMenuCloseDelay: number
   subMenuOpenDelay: number
   mode: MenuMode
-  onSelect?: (index: string) => void
-  defaultOpenSubMenus: string[]
+  onSelect?: (key: string) => void
+  onInternalOpenChange: (key: string, toogle: boolean) => void
+  openKeys: string[]
 }
 
 const MenuContext = createContext<MenuContextProps>({
-	selectedIndex: '',
+	openKeys: [],
+	selectedKeys: [],
 	subMenuCloseDelay: 0,
 	subMenuOpenDelay: 0,
 	mode: 'horizontal',
-	defaultOpenSubMenus: []
+	onInternalOpenChange: () => {}
 })
 
 MenuContext.displayName = 'x-Menu.Context'
