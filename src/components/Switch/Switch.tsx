@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { PropsWithClassName } from '../../types/x-ui'
 
 interface SwitchBaseProps {
@@ -25,35 +25,28 @@ const Switch: React.FC<SwitchProps> = (props) => {
 		onClick
 	} = props
 
-	const [internalChecked, setInternalChecked] = useState(checked ?? defaultChecked)
-
-	// 受控状态，更新 checked 状态
-	useEffect(() => {
-		if (checked !== undefined) {
-			setInternalChecked(checked)
-		}
-	}, [checked])
+	const [internalChecked, setInternalChecked] = useState(defaultChecked)
 
 	const classes = classNames(
 		'x-switch',
 		className,
 		{ 'x-switch--disabled': disabled },
 		{ 'x-switch--sm': size === 'small' },
-		{ 'x-switch--checked': internalChecked },
+		{ 'x-switch--checked': (checked ?? internalChecked) },
 	)
 
 	const onInternalClick: React.MouseEventHandler<HTMLButtonElement> = e => {
 		if (!disabled) {
-			if (checked === undefined) {
+			if (typeof checked === 'undefined') {
 				setInternalChecked(!internalChecked)
 			}
 			onClick && onClick(e)
-			onChange && onChange(!internalChecked)
+			onChange && onChange(!(checked ?? internalChecked))
 		}
 	}
 
 	return (
-		<button className={classes} onClick={onInternalClick}></button>
+		<button className={classes} onClick={onInternalClick} />
 	)
 }
 
