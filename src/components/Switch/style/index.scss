@@ -22,6 +22,10 @@
     transition: left 0.4s;
   }
 
+  &--checked {
+    background-color: $primary;
+  }
+
   &--disabled {
     cursor: not-allowed;
     background-color: lighten($primary, 30)
@@ -29,9 +33,5 @@
 
   &--sm {
     @include switch-style($switch-width-sm, $switch-height-sm, $switch-border-radius-sm);
-  }
-
-  &--checked {
-    background-color: $primary;
   }
 }
