@@ -51,4 +51,6 @@ const UploadList: React.FC<UploadListProps> = (props) => {
 	)
 }
 
+UploadList.displayName = 'x-uploadlist'
+
 export default UploadList

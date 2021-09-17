@@ -34,4 +34,6 @@ const Dragger: React.FC<UploadProps> = (props) => {
 	)
 }
 
+Dragger.displayName = 'x-dragger'
+
 export default Dragger
