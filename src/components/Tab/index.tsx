@@ -1,4 +1,3 @@
-import './style/index.scss'
 
 export type { TabProps } from './Tab'
 export type { TabPaneProps } from './TabPane'

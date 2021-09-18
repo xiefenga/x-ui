@@ -1,6 +1,4 @@
-@import "~@/styles/variables";
-@import "./variables";
-@import "~@/styles/mixin";
+@import './variables';
 
 @mixin menu-item-style {
   padding: $menu-item-padding-y 0;

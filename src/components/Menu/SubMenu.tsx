@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import MenuContext from './MenuContext'
 import React, { useContext, useRef } from 'react'
@@ -148,10 +147,6 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
 }
 
 SubMenu.displayName = 'x-Menu.SubMenu'
-
-SubMenu.propTypes = {
-	title: PropTypes.string.isRequired
-}
 
 type SubMenuElement = React.FunctionComponentElement<SubMenuProps>
 
