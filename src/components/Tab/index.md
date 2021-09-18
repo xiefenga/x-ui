@@ -8,7 +8,7 @@ title: Tab
 
 
 import React from "react";
-import { Tab } from "x-ui";
+import { Tab } from "@xf/x-ui";
 
 const { TabPane } = Tab;
 
@@ -28,7 +28,7 @@ export default () => (
 ```tsx
 
 import React, { useState } from "react";
-import { Tab } from "x-ui";
+import { Tab } from "@xf/x-ui";
 
 const { TabPane } = Tab;
 
@@ -61,7 +61,7 @@ export default () => {
 
 ```tsx
 import React, { useState } from "react";
-import { Tab } from "x-ui";
+import { Tab } from "@xf/x-ui";
 
 const { TabPane } = Tab;
 
@@ -93,8 +93,8 @@ export default () => {
 ## 卡片式
 
 ```tsx
-import React from 'react'
-import { Tab } from 'x-ui'
+import React from "react";
+import { Tab } from "@xf/x-ui";
 
 const { TabPane } = Tab
 
@@ -118,8 +118,8 @@ export default () => {
 ## 带图标
 
 ```tsx
-import React from 'react'
-import { Tab, Icon } from '../../index'
+import React from "react";
+import { Tab, Icon } from "@xf/x-ui";
 
 const { TabPane } = Tab
 

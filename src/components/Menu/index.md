@@ -10,8 +10,8 @@ title: Menu
  *  - CSB
  *  - EXTERNAL
  */
-import React from 'react'
-import { Menu } from 'x-ui'
+import React from "react";
+import { Menu } from "@xf/x-ui";
 
 export default () => {
 	return (
@@ -42,8 +42,8 @@ export default () => {
 
 ```tsx
 
-import React from 'react'
-import { Menu } from 'x-ui'
+import React from "react";
+import { Menu } from "@xf/x-ui";
 
 export default () => {
 	return (
@@ -80,8 +80,8 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import { Menu } from 'x-ui'
-import React, { useState } from 'react'
+import { Menu } from "@xf/x-ui";
+import React, { useState } from "react";
 
 export default () => {
 	const [selected, setSelected] = useState<string[]>(['key1'])

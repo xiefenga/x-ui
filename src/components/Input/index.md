@@ -11,7 +11,7 @@ title: Input
  *  - EXTERNAL
  */
 import React from "react";
-import { Input } from "x-ui";
+import { Input } from "@xf/x-ui";
 
 export default () => (
   <React.Fragment>
@@ -32,7 +32,7 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import { Input } from "x-ui";
+import { Input } from "@xf/x-ui";
 import React, { useState } from "react";
 
 export default () => {
@@ -56,7 +56,7 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import { Input } from "x-ui";
+import { Input } from "@xf/x-ui";
 import React, { useState } from "react";
 
 export default () => {
@@ -87,7 +87,7 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import { Input } from "x-ui";
+import { Input } from "@xf/x-ui";
 import React, { useState } from "react";
 
 export default () => {
@@ -116,3 +116,5 @@ export default () => {
 ```
 
 <API src="./api/Input.tsx"></API>
+
+Input 组件支持原生 input 的所有属性

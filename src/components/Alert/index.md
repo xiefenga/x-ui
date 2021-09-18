@@ -11,7 +11,7 @@ title: Alert
  *  - EXTERNAL
  */
 import React from "react";
-import { Alert } from 'x-ui'
+import { Alert } from "@xf/x-ui";
 
 export default () => <Alert message="warning Text" />
 ```
@@ -25,7 +25,7 @@ export default () => <Alert message="warning Text" />
  *  - EXTERNAL
  */
 import React from "react";
-import { Alert } from 'x-ui'
+import { Alert } from "@xf/x-ui"
 
 export default () => (
   <React.Fragment>
@@ -49,7 +49,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Alert } from 'x-ui'
+import { Alert } from "@xf/x-ui";
 
 export default () => <Alert icon="info-circle" message="warning Text" />
 ```
@@ -64,7 +64,7 @@ export default () => <Alert icon="info-circle" message="warning Text" />
  *  - EXTERNAL
  */
 import React from "react";
-import { Alert } from 'x-ui'
+import { Alert } from "@xf/x-ui";
 
 const style = {margin: '10px 0'}
 

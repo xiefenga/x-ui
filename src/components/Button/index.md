@@ -13,7 +13,7 @@ group:
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "x-ui";
+import { Button } from "@xf/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -51,7 +51,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "x-ui";
+import { Button } from "@xf/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -75,7 +75,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "x-ui";
+import { Button } from "@xf/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -113,7 +113,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "x-ui";
+import { Button } from "@xf/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -150,7 +150,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "x-ui";
+import { Button } from "@xf/x-ui";
 
 const style = { style: { margin: "0 10px" } };
 
@@ -182,7 +182,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "x-ui";
+import { Button } from "@xf/x-ui";
 
 const style = { style: { margin: "10px 0" } };
 
@@ -200,3 +200,5 @@ export default () => (
 ```
 
 <API src="./api/Button.tsx"></API>
+
+Button 组件支持原生 button 的所有属性
