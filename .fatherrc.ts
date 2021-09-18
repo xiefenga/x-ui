@@ -1,4 +1,9 @@
 export default {
-  esm: "rollup",
-  cjs: "rollup",
-};
+  cjs: false,
+  esm: {
+    type: 'rollup',
+    file: 'index'
+  },
+  extractCSS: true,
+  entry: 'src/index.tsx'
+}
