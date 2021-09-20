@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "start": "dumi dev",
-    "docs": "npm run docs:build && docs:deploy",
+    "docs": "npm run docs:build && npm run docs:deploy",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father-build && rm dist/setupTests.d.ts",
