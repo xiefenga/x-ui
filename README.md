@@ -9,12 +9,12 @@
 安装
 
 ```shell
-yarn add @crush/x-ui
+yarn add @windfall/x-ui
 ```
 使用 
 
 ```tsx | pure
-import { Button } from '@crush/x-ui'
+import { Button } from '@windfall/x-ui'
 
 ReactDOM.render(<Button />, mountNode)
 ```
@@ -22,6 +22,6 @@ ReactDOM.render(<Button />, mountNode)
 引入样式
 
 ```tsx | pure
-import '@crush/x-ui/dist/index.css'
+import '@windfall/x-ui/dist/index.css'
 ```
 

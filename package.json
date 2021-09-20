@@ -1,5 +1,5 @@
 {
-  "name": "@crush/x-ui",
+  "name": "@windfall/x-ui",
   "version": "0.1.0",
   "author": "xie feng",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "Component",
     "React"
   ],
-  "homepage": "",
+  "homepage": "https://xiefenga.github.io/x-ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/xiefenga/x-ui"
