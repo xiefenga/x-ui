@@ -17,5 +17,7 @@ export default defineConfig({
       // 忽略从 node_modules 继承的属性
       skipNodeModules: true
     }
-  }
+  },
+  base: '/x-ui',
+  publicPath: './'
 });
