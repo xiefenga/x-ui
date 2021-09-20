@@ -24,7 +24,7 @@ interface ButtonBaseProps {
 	block: boolean
 	shape: ButtonShape
 	loading: boolean
-	onClick: React.MouseEventHandler<HTMLElement>
+	onClick: React.MouseEventHandler<HTMLElement | HTMLAnchorElement>
 }
 
 type OmitButtonHTMLAttributes = Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type' | 'onClick'>
@@ -81,7 +81,13 @@ const Button: React.FC<ButtonProps> = props => {
 			href,
 			target,
 			className: classes,
-			onClick: disabled || loading ? undefined : onClick,
+			onClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+				if (disabled) {
+					e.preventDefault()
+				} else if (!loading && onClick) {
+					onClick(e)
+				}
+			},
 			...rest,
 		}
 
