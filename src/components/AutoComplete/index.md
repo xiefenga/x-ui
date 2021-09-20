@@ -11,7 +11,7 @@ title: AutoComplete
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { AutoComplete } from "@xf/x-ui";
+import { AutoComplete } from "@crush/x-ui";
 
 export default () => {
   const [options, setOptions] = useState([]);
@@ -44,7 +44,7 @@ export default () => {
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { AutoComplete } from "@xf/x-ui";
+import { AutoComplete } from "@crush/x-ui";
 
 export default () => {
   const [options, setOptions] = useState([]);
@@ -78,7 +78,7 @@ export default () => {
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { AutoComplete } from "@xf/x-ui";
+import { AutoComplete } from "@crush/x-ui";
 
 export default () => {
   const value = "aaa"

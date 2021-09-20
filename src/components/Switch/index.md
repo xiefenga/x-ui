@@ -11,7 +11,7 @@ title: Switch
  *  - EXTERNAL
  */
 import React from "react";
-import { Switch } from "@xf/x-ui";
+import { Switch } from "@crush/x-ui";
 
 export default () => {
   return (
@@ -32,7 +32,7 @@ export default () => {
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { Switch, Button } from "@xf/x-ui";
+import { Switch, Button } from "@crush/x-ui";
 
 export default () => {
   const [disabled, setDisabled] = useState(true)
@@ -59,7 +59,7 @@ export default () => {
  *  - EXTERNAL
  */
 import React from "react";
-import { Switch } from "@xf/x-ui";
+import { Switch } from "@crush/x-ui";
 
 export default () => {
   return (
@@ -86,7 +86,7 @@ export default () => {
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { Switch } from "@xf/x-ui";
+import { Switch } from "@crush/x-ui";
 export default () => {
   const [checked, setChecked] = useState(false);
 

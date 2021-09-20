@@ -11,7 +11,7 @@ title: Input
  *  - EXTERNAL
  */
 import React from "react";
-import { Input } from "@xf/x-ui";
+import { Input } from "@crush/x-ui";
 
 export default () => (
   <React.Fragment>
@@ -32,7 +32,7 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import { Input } from "@xf/x-ui";
+import { Input } from "@crush/x-ui";
 import React, { useState } from "react";
 
 export default () => {
@@ -56,7 +56,7 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import { Input } from "@xf/x-ui";
+import { Input } from "@crush/x-ui";
 import React, { useState } from "react";
 
 export default () => {
@@ -87,7 +87,7 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import { Input } from "@xf/x-ui";
+import { Input } from "@crush/x-ui";
 import React, { useState } from "react";
 
 export default () => {

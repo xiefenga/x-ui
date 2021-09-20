@@ -11,7 +11,7 @@ title: Upload
  *  - EXTERNAL
  */
 import React from "react";
-import { Upload, Button } from "@xf/x-ui";
+import { Upload, Button } from "@crush/x-ui";
 
 export default () => (
   <Upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76">
@@ -32,8 +32,8 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Upload, Button } from "@xf/x-ui";
-import type { UploadProps } from "@xf/x-ui";
+import { Upload, Button } from "@crush/x-ui";
+import type { UploadProps } from "@crush/x-ui";
 
 export default () => {
 
@@ -78,8 +78,8 @@ export default () => {
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { Upload, Button } from "@xf/x-ui";
-import type { UploadProps, UploadFile } from "@xf/x-ui";
+import { Upload, Button } from "@crush/x-ui";
+import type { UploadProps, UploadFile } from "@crush/x-ui";
 
 export default () => {
 
@@ -112,8 +112,8 @@ export default () => {
  *  - EXTERNAL
  */
 import React from "react";
-import { Upload, Button } from "@xf/x-ui";
-import type { UploadFile } from "@xf/x-ui";
+import { Upload, Button } from "@crush/x-ui";
+import type { UploadFile } from "@crush/x-ui";
 
 export default () => {
 
@@ -145,7 +145,7 @@ export default () => {
  *  - EXTERNAL
  */
 import React from "react";
-import { Upload, Icon } from "@xf/x-ui";
+import { Upload, Icon } from "@crush/x-ui";
 
 const { Dragger } = Upload
 

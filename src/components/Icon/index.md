@@ -11,7 +11,7 @@ title: Icon
  *  - EXTERNAL
  */
 import React from "react";
-import { Icon } from "@xf/x-ui";
+import { Icon } from "@crush/x-ui";
 
 const style = { marginRight: "10px" };
 
@@ -45,7 +45,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Icon } from "@xf/x-ui";
+import { Icon } from "@crush/x-ui";
 
 const style = { marginRight: "10px" };
 
@@ -79,7 +79,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Icon } from "@xf/x-ui";
+import { Icon } from "@crush/x-ui";
 
 const style = { marginRight: "10px" };
 
@@ -105,7 +105,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Icon } from "@xf/x-ui";
+import { Icon } from "@crush/x-ui";
 
 const style = { marginRight: "10px" };
 

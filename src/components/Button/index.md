@@ -13,7 +13,7 @@ group:
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "@xf/x-ui";
+import { Button } from "@crush/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -51,7 +51,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "@xf/x-ui";
+import { Button } from "@crush/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -75,7 +75,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "@xf/x-ui";
+import { Button } from "@crush/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -113,7 +113,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "@xf/x-ui";
+import { Button } from "@crush/x-ui";
 
 const style = { style: { marginLeft: "10px" } };
 
@@ -150,7 +150,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "@xf/x-ui";
+import { Button } from "@crush/x-ui";
 
 const style = { style: { margin: "0 10px" } };
 
@@ -182,7 +182,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Button } from "@xf/x-ui";
+import { Button } from "@crush/x-ui";
 
 const style = { style: { margin: "10px 0" } };
 

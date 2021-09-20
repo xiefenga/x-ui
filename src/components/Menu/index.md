@@ -11,7 +11,7 @@ title: Menu
  *  - EXTERNAL
  */
 import React from "react";
-import { Menu } from "@xf/x-ui";
+import { Menu } from "@crush/x-ui";
 
 export default () => {
 	return (
@@ -43,7 +43,7 @@ export default () => {
 ```tsx
 
 import React from "react";
-import { Menu } from "@xf/x-ui";
+import { Menu } from "@crush/x-ui";
 
 export default () => {
 	return (
@@ -80,7 +80,7 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import { Menu } from "@xf/x-ui";
+import { Menu } from "@crush/x-ui";
 import React, { useState } from "react";
 
 export default () => {

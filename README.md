@@ -9,19 +9,19 @@
 安装
 
 ```shell
-yarn add @xf/x-ui
+yarn add @crush/x-ui
 ```
 使用 
 
 ```tsx | pure
-import { Button } from 'x-ui';
+import { Button } from '@crush/x-ui'
 
-ReactDOM.render(<Button />, mountNode);
+ReactDOM.render(<Button />, mountNode)
 ```
 
 引入样式
 
 ```tsx | pure
-import 'x-ui/dist/index.css'
+import '@crush/x-ui/dist/index.css'
 ```
 

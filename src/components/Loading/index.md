@@ -13,7 +13,7 @@ group:
  *  - EXTERNAL
  */
 import React from "react";
-import { Loading } from "@xf/x-ui";
+import { Loading } from "@crush/x-ui";
 
 export default () => <Loading loading />;
 ```
@@ -27,7 +27,7 @@ export default () => <Loading loading />;
  *  - EXTERNAL
  */
 import React from "react";
-import { Loading } from "@xf/x-ui";
+import { Loading } from "@crush/x-ui";
 
 export default () => (
   <React.Fragment>
@@ -49,7 +49,7 @@ export default () => (
  *  - EXTERNAL
  */
 import React from "react";
-import { Loading } from "@xf/x-ui";
+import { Loading } from "@crush/x-ui";
 
 export default () => <Loading loading tip="加载中" />;
 ```
@@ -65,7 +65,7 @@ export default () => <Loading loading tip="加载中" />;
  *  - EXTERNAL
  */
 import React, { useState } from "react";
-import { Loading, Switch } from "@xf/x-ui";
+import { Loading, Switch } from "@crush/x-ui";
 
 export default () => {
   const [loading, setLoading] = useState(false);
