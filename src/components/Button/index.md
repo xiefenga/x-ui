@@ -12,34 +12,34 @@ group:
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Button } from "@windfall/x-ui";
+import React from 'react'
+import { Button } from '@0x1461a0/x-ui'
 
-const style = { style: { marginLeft: "10px" } };
+const style = { style: { marginLeft: '10px' } }
 
 export default () => (
   <React.Fragment>
     <Button>默认按钮</Button>
-    <Button {...style} type="primary">
+    <Button {...style} type='primary'>
       primary按钮
     </Button>
-    <Button {...style} type="success">
+    <Button {...style} type='success'>
       success按钮
     </Button>
-    <Button {...style} type="danger">
+    <Button {...style} type='danger'>
       danger按钮
     </Button>
-    <Button {...style} type="warning">
+    <Button {...style} type='warning'>
       warning按钮
     </Button>
-    <Button {...style} type="info">
+    <Button {...style} type='info'>
       info按钮
     </Button>
-    <Button {...style} type="link">
+    <Button {...style} type='link'>
       link按钮
     </Button>
   </React.Fragment>
-);
+)
 ```
 
 ## 可跳转
@@ -50,21 +50,22 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Button } from "@windfall/x-ui";
+import React from 'react'
+import { Button } from '@0x1461a0/x-ui'
 
-const style = { style: { marginLeft: "10px" } };
+const style = { style: { marginLeft: '10px' } }
 
 export default () => (
-   <React.Fragment>
-    <Button type="primary" href="https://baidu.com">跳转百度</Button>
-    <Button href="https://baidu.com" target="_blank" type="link" {...style}>
+  <React.Fragment>
+    <Button type='primary' href='https://baidu.com'>
+      跳转百度
+    </Button>
+    <Button href='https://baidu.com' target='_blank' type='link' {...style}>
       支持 target
     </Button>
   </React.Fragment>
 )
 ```
-
 
 ## disabled 状态
 
@@ -74,34 +75,34 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Button } from "@windfall/x-ui";
+import React from 'react'
+import { Button } from '@0x1461a0/x-ui'
 
-const style = { style: { marginLeft: "10px" } };
+const style = { style: { marginLeft: '10px' } }
 
 export default () => (
   <React.Fragment>
     <Button disabled>默认按钮</Button>
-    <Button {...style} disabled type="primary">
+    <Button {...style} disabled type='primary'>
       primary按钮
     </Button>
-    <Button {...style} disabled type="success">
+    <Button {...style} disabled type='success'>
       success按钮
     </Button>
-    <Button {...style} disabled type="danger">
+    <Button {...style} disabled type='danger'>
       danger按钮
     </Button>
-    <Button {...style} disabled type="warning">
+    <Button {...style} disabled type='warning'>
       warning按钮
     </Button>
-    <Button {...style} disabled type="info">
+    <Button {...style} disabled type='info'>
       info按钮
     </Button>
-    <Button {...style} disabled type="link">
+    <Button {...style} disabled type='link'>
       link按钮
     </Button>
   </React.Fragment>
-);
+)
 ```
 
 ## loading 状态
@@ -112,33 +113,33 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Button } from "@windfall/x-ui";
+import React from 'react'
+import { Button } from '@0x1461a0/x-ui'
 
-const style = { style: { marginLeft: "10px" } };
+const style = { style: { marginLeft: '10px' } }
 
 export default () => (
   <React.Fragment>
-    <Button {...style} loading type="primary">
+    <Button {...style} loading type='primary'>
       primary按钮
     </Button>
-    <Button {...style} loading type="success">
+    <Button {...style} loading type='success'>
       success按钮
     </Button>
-    <Button {...style} loading type="danger">
+    <Button {...style} loading type='danger'>
       danger按钮
     </Button>
-    <Button {...style} loading type="warning">
+    <Button {...style} loading type='warning'>
       warning按钮
     </Button>
-    <Button {...style} loading type="info">
+    <Button {...style} loading type='info'>
       info按钮
     </Button>
-    <Button {...style} loading type="link">
+    <Button {...style} loading type='link'>
       link按钮
     </Button>
   </React.Fragment>
-);
+)
 ```
 
 ## 不同尺寸
@@ -149,28 +150,28 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Button } from "@windfall/x-ui";
+import React from 'react'
+import { Button } from '@0x1461a0/x-ui'
 
-const style = { style: { margin: "0 10px" } };
+const style = { style: { margin: '0 10px' } }
 
 export default () => (
   <React.Fragment>
-    <Button size="small" type="primary">
+    <Button size='small' type='primary'>
       small按钮
     </Button>
     <Button {...style}>默认尺寸</Button>
-    <Button size="large" type="success">
+    <Button size='large' type='success'>
       large按钮
     </Button>
-    <Button {...style} shape="round" type="primary">
+    <Button {...style} shape='round' type='primary'>
       圆角按钮
     </Button>
-    <Button shape="circle" type="primary">
+    <Button shape='circle' type='primary'>
       圆
     </Button>
   </React.Fragment>
-);
+)
 ```
 
 ## block 按钮
@@ -181,22 +182,22 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Button } from "@windfall/x-ui";
+import React from 'react'
+import { Button } from '@0x1461a0/x-ui'
 
-const style = { style: { margin: "10px 0" } };
+const style = { style: { margin: '10px 0' } }
 
 export default () => (
   <React.Fragment>
-    <Button block type="primary">
+    <Button block type='primary'>
       block按钮
     </Button>
-    <Button {...style} block type="link">
+    <Button {...style} block type='link'>
       block按钮
     </Button>
     <Button block>block按钮</Button>
   </React.Fragment>
-);
+)
 ```
 
 <API src="./api/Button.tsx"></API>

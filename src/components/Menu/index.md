@@ -10,63 +10,46 @@ title: Menu
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Menu } from "@windfall/x-ui";
+import React from 'react'
+import { Menu } from '@0x1461a0/x-ui'
 
 export default () => {
-	return (
-		<Menu defaultSelectedKeys={['key1']}>
-			<Menu.Item key="key1">
-				菜单项1
-			</Menu.Item>
-			<Menu.Item>
-				菜单项2
-			</Menu.Item>
-			<Menu.SubMenu title="子菜单">
-				<Menu.Item>
-				菜单项1
-				</Menu.Item>
-				<Menu.Item>
-				菜单项2
-				</Menu.Item>
-			</Menu.SubMenu>
-			<Menu.Item disabled>
-				菜单项3
-			</Menu.Item>
-		</Menu>
-	)
+  return (
+    <Menu defaultSelectedKeys={['key1']}>
+      <Menu.Item key='key1'>菜单项1</Menu.Item>
+      <Menu.Item>菜单项2</Menu.Item>
+      <Menu.SubMenu title='子菜单'>
+        <Menu.Item>菜单项1</Menu.Item>
+        <Menu.Item>菜单项2</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.Item disabled>菜单项3</Menu.Item>
+    </Menu>
+  )
 }
 ```
 
 ## 纵向菜单
 
 ```tsx
-
-import React from "react";
-import { Menu } from "@windfall/x-ui";
+import React from 'react'
+import { Menu } from '@0x1461a0/x-ui'
 
 export default () => {
-	return (
-		<Menu defaultOpenKeys={['sub']} defaultSelectedKeys={['sub-ke1']} mode="vertical">
-			<Menu.Item >
-				菜单项1
-			</Menu.Item>
-			<Menu.Item disabled>
-				菜单项2
-			</Menu.Item>
-			<Menu.SubMenu key="sub" title="子菜单">
-				<Menu.Item key="sub-ke1">
-				菜单项1
-				</Menu.Item>
-				<Menu.Item>
-				菜单项2
-				</Menu.Item>
-			</Menu.SubMenu>
-			<Menu.Item>
-				菜单项3
-			</Menu.Item>
-		</Menu>
-	)
+  return (
+    <Menu
+      defaultOpenKeys={['sub']}
+      defaultSelectedKeys={['sub-ke1']}
+      mode='vertical'
+    >
+      <Menu.Item>菜单项1</Menu.Item>
+      <Menu.Item disabled>菜单项2</Menu.Item>
+      <Menu.SubMenu key='sub' title='子菜单'>
+        <Menu.Item key='sub-ke1'>菜单项1</Menu.Item>
+        <Menu.Item>菜单项2</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.Item>菜单项3</Menu.Item>
+    </Menu>
+  )
 }
 ```
 
@@ -80,32 +63,22 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import { Menu } from "@windfall/x-ui";
-import React, { useState } from "react";
+import { Menu } from '@0x1461a0/x-ui'
+import React, { useState } from 'react'
 
 export default () => {
-	const [selected, setSelected] = useState<string[]>(['key1'])
-	return (
-		<Menu selectedKeys={selected} onSelect={key => setSelected([key])}>
-			<Menu.Item key="key1">
-				菜单项1
-			</Menu.Item>
-			<Menu.Item>
-				菜单项2
-			</Menu.Item>
-			<Menu.SubMenu title="子菜单">
-				<Menu.Item>
-				菜单项1
-				</Menu.Item>
-				<Menu.Item>
-				菜单项2
-				</Menu.Item>
-			</Menu.SubMenu>
-			<Menu.Item disabled>
-				菜单项3
-			</Menu.Item>
-		</Menu>
-	)
+  const [selected, setSelected] = useState<string[]>(['key1'])
+  return (
+    <Menu selectedKeys={selected} onSelect={(key) => setSelected([key])}>
+      <Menu.Item key='key1'>菜单项1</Menu.Item>
+      <Menu.Item>菜单项2</Menu.Item>
+      <Menu.SubMenu title='子菜单'>
+        <Menu.Item>菜单项1</Menu.Item>
+        <Menu.Item>菜单项2</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.Item disabled>菜单项3</Menu.Item>
+    </Menu>
+  )
 }
 ```
 

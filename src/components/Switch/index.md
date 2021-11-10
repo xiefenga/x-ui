@@ -10,8 +10,8 @@ title: Switch
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Switch } from "@windfall/x-ui";
+import React from 'react'
+import { Switch } from '@0x1461a0/x-ui'
 
 export default () => {
   return (
@@ -31,8 +31,8 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import React, { useState } from "react";
-import { Switch, Button } from "@windfall/x-ui";
+import React, { useState } from 'react'
+import { Switch, Button } from '@0x1461a0/x-ui'
 
 export default () => {
   const [disabled, setDisabled] = useState(true)
@@ -42,8 +42,10 @@ export default () => {
   return (
     <React.Fragment>
       <Switch disabled={disabled} />
-      <div style={{marginTop: '10px'}}>
-        <Button onClick={toogle} size="small">{disabled ? '启用' : '禁用'}</Button>
+      <div style={{ marginTop: '10px' }}>
+        <Button onClick={toogle} size='small'>
+          {disabled ? '启用' : '禁用'}
+        </Button>
       </div>
     </React.Fragment>
   )
@@ -58,8 +60,8 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Switch } from "@windfall/x-ui";
+import React from 'react'
+import { Switch } from '@0x1461a0/x-ui'
 
 export default () => {
   return (
@@ -70,7 +72,7 @@ export default () => {
       </div>
       <div>
         <span>选中状态： </span>
-        <Switch size="small" />
+        <Switch size='small' />
       </div>
     </React.Fragment>
   )
@@ -85,12 +87,12 @@ export default () => {
  *  - CSB
  *  - EXTERNAL
  */
-import React, { useState } from "react";
-import { Switch } from "@windfall/x-ui";
+import React, { useState } from 'react'
+import { Switch } from '@0x1461a0/x-ui'
 export default () => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false)
 
-  const toogle = () => setChecked(!checked);
+  const toogle = () => setChecked(!checked)
 
   return (
     <React.Fragment>

@@ -12,10 +12,10 @@ group:
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Loading } from "@windfall/x-ui";
+import React from 'react'
+import { Loading } from '@0x1461a0/x-ui'
 
-export default () => <Loading loading />;
+export default () => <Loading loading />
 ```
 
 ## 不同大小
@@ -26,16 +26,16 @@ export default () => <Loading loading />;
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Loading } from "@windfall/x-ui";
+import React from 'react'
+import { Loading } from '@0x1461a0/x-ui'
 
 export default () => (
   <React.Fragment>
-    <Loading loading size="small" />
+    <Loading loading size='small' />
     <Loading loading />
-    <Loading loading size="large" />
+    <Loading loading size='large' />
   </React.Fragment>
-);
+)
 ```
 
 ## 提示文本
@@ -48,10 +48,10 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Loading } from "@windfall/x-ui";
+import React from 'react'
+import { Loading } from '@0x1461a0/x-ui'
 
-export default () => <Loading loading tip="加载中" />;
+export default () => <Loading loading tip='加载中' />
 ```
 
 ## 将容器变为加载状态
@@ -64,31 +64,31 @@ export default () => <Loading loading tip="加载中" />;
  *  - CSB
  *  - EXTERNAL
  */
-import React, { useState } from "react";
-import { Loading, Switch } from "@windfall/x-ui";
+import React, { useState } from 'react'
+import { Loading, Switch } from '@0x1461a0/x-ui'
 
 export default () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
-  const toogle = () => setLoading(!loading);
+  const toogle = () => setLoading(!loading)
 
   return (
     <React.Fragment>
       <div>
         <span>loading: </span>
-        <Switch checked={loading} onChange={toogle}/>
+        <Switch checked={loading} onChange={toogle} />
       </div>
       <br />
-      <Loading loading={loading} tip="加载中">
-        <div style={{ border: "1px solid", padding: "10px" }}>
+      <Loading loading={loading} tip='加载中'>
+        <div style={{ border: '1px solid', padding: '10px' }}>
           East-Tec Eraser goes beyond U.S. Department of Defense standards for
           the permanent erasure of digital information and easily removes every
           trace of sensitive data from your computer.
         </div>
       </Loading>
     </React.Fragment>
-  );
-};
+  )
+}
 ```
 
 <API src="./api/Loading.tsx"></API>

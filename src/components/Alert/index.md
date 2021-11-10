@@ -10,10 +10,10 @@ title: Alert
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Alert } from "@windfall/x-ui";
+import React from 'react'
+import { Alert } from '@0x1461a0/x-ui'
 
-export default () => <Alert message="warning Text" />
+export default () => <Alert message='warning Text' />
 ```
 
 ## 不同样式
@@ -24,18 +24,18 @@ export default () => <Alert message="warning Text" />
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Alert } from "@windfall/x-ui"
+import React from 'react'
+import { Alert } from '@0x1461a0/x-ui'
 
 export default () => (
   <React.Fragment>
-    <Alert type="success" message="success Text" />
+    <Alert type='success' message='success Text' />
     <br />
-    <Alert type="info" message="info Text" />
+    <Alert type='info' message='info Text' />
     <br />
-    <Alert type="warning" message="warning Text" />
+    <Alert type='warning' message='warning Text' />
     <br />
-    <Alert type="error" message="error Text" />
+    <Alert type='error' message='error Text' />
   </React.Fragment>
 )
 ```
@@ -48,12 +48,11 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Alert } from "@windfall/x-ui";
+import React from 'react'
+import { Alert } from '@0x1461a0/x-ui'
 
-export default () => <Alert icon="info-circle" message="warning Text" />
+export default () => <Alert icon='info-circle' message='warning Text' />
 ```
-
 
 ## 可关闭
 
@@ -63,17 +62,17 @@ export default () => <Alert icon="info-circle" message="warning Text" />
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Alert } from "@windfall/x-ui";
+import React from 'react'
+import { Alert } from '@0x1461a0/x-ui'
 
-const style = {margin: '10px 0'}
+const style = { margin: '10px 0' }
 
 export default () => (
-    <React.Fragment>
-    <Alert closeable type="info" message="info Text" />
-    <Alert style={style} type="success" message="success Text" />
-    <Alert closeable type="warning" message="warning Text" />
-    <Alert style={style} type="error" message="error Text" />
+  <React.Fragment>
+    <Alert closeable type='info' message='info Text' />
+    <Alert style={style} type='success' message='success Text' />
+    <Alert closeable type='warning' message='warning Text' />
+    <Alert style={style} type='error' message='error Text' />
   </React.Fragment>
 )
 ```

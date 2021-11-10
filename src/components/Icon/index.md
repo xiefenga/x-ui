@@ -10,30 +10,30 @@ title: Icon
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Icon } from "@windfall/x-ui";
+import React from 'react'
+import { Icon } from '@0x1461a0/x-ui'
 
-const style = { marginRight: "10px" };
+const style = { marginRight: '10px' }
 
 export default () => (
   <React.Fragment>
-    <span className="cell" style={style}>
-      <Icon icon="coffee" />
+    <span className='cell' style={style}>
+      <Icon icon='coffee' />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon icon={["fas", "check-circle"]} />
+    <span className='cell' style={style}>
+      <Icon icon={['fas', 'check-circle']} />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon icon={["fab", "github"]} />
+    <span className='cell' style={style}>
+      <Icon icon={['fab', 'github']} />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon icon={["far", "bell"]} />
+    <span className='cell' style={style}>
+      <Icon icon={['far', 'bell']} />
     </span>
   </React.Fragment>
-);
+)
 ```
 
 ## 支持主题色
@@ -44,30 +44,30 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Icon } from "@windfall/x-ui";
+import React from 'react'
+import { Icon } from '@0x1461a0/x-ui'
 
-const style = { marginRight: "10px" };
+const style = { marginRight: '10px' }
 
 export default () => (
   <React.Fragment>
-    <span className="cell" style={style}>
-      <Icon theme="primary" icon="coffee" />
+    <span className='cell' style={style}>
+      <Icon theme='primary' icon='coffee' />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon theme="success" icon={["fas", "check-circle"]} />
+    <span className='cell' style={style}>
+      <Icon theme='success' icon={['fas', 'check-circle']} />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon theme="dark" icon={["fab", "github"]} />
+    <span className='cell' style={style}>
+      <Icon theme='dark' icon={['fab', 'github']} />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon theme="warning" icon={["far", "bell"]} />
+    <span className='cell' style={style}>
+      <Icon theme='warning' icon={['far', 'bell']} />
     </span>
   </React.Fragment>
-);
+)
 ```
 
 ## 旋转
@@ -78,22 +78,22 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Icon } from "@windfall/x-ui";
+import React from 'react'
+import { Icon } from '@0x1461a0/x-ui'
 
-const style = { marginRight: "10px" };
+const style = { marginRight: '10px' }
 
 export default () => (
   <React.Fragment>
-    <span className="cell" style={style}>
-      <Icon icon="spinner" spin />
+    <span className='cell' style={style}>
+      <Icon icon='spinner' spin />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon icon="spinner" pulse />
+    <span className='cell' style={style}>
+      <Icon icon='spinner' pulse />
     </span>
   </React.Fragment>
-);
+)
 ```
 
 ## 不同尺寸
@@ -104,33 +104,33 @@ export default () => (
  *  - CSB
  *  - EXTERNAL
  */
-import React from "react";
-import { Icon } from "@windfall/x-ui";
+import React from 'react'
+import { Icon } from '@0x1461a0/x-ui'
 
-const style = { marginRight: "10px" };
+const style = { marginRight: '10px' }
 
 export default () => (
   <React.Fragment>
-    <span className="cell" style={style}>
-      <Icon size="lg" icon="coffee" />
+    <span className='cell' style={style}>
+      <Icon size='lg' icon='coffee' />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon size="sm" icon="coffee" />
+    <span className='cell' style={style}>
+      <Icon size='sm' icon='coffee' />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon size="xs" icon="coffee" />
+    <span className='cell' style={style}>
+      <Icon size='xs' icon='coffee' />
     </span>
 
-    <span className="cell" style={style}>
-      <Icon size="10x" icon="coffee" />
+    <span className='cell' style={style}>
+      <Icon size='10x' icon='coffee' />
     </span>
-    <span className="cell" style={style}>
-      <Icon size="1x" icon="coffee" />
+    <span className='cell' style={style}>
+      <Icon size='1x' icon='coffee' />
     </span>
   </React.Fragment>
-);
+)
 ```
 
 <API src="./api/Icon.tsx"></API>
